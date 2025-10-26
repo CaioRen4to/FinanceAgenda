@@ -1,0 +1,45 @@
+<main>
+    <div>
+        <h1>Criar Nova Conta AQUI!</h1>
+        <form (ngSubmit)="onCadatro()">
+            <label for="name">Nome</label>
+            <input 
+
+                type="text"
+                id="nome"
+                [(ngModel)] ="nome"
+                name="nome"
+                placeholder="Escreva como deseja ser chamado!"
+                required>
+
+            <label for="email">E-mail</label>
+            <input 
+
+                type="email"
+                id="email"
+                [(ngModel)]="email"
+                name="email"
+                placeholder="nome@exemplo.com"
+                required>
+
+            <label for="password">Senha</label>
+            <input 
+
+                type="password"
+                id="password"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="•••••••••"
+                required>
+
+            <label for="Nasc">Data de Nascimento</label>
+            <input 
+
+                type="data"
+                id="data"
+                [(ngModel)]="data"
+                name="data"
+                required>
+        </form>
+    </div>
+</main>

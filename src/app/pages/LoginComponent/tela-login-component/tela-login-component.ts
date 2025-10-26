@@ -23,9 +23,14 @@ export class TelaLoginComponent {
   onLogin() {
     if (this.username === 'admin@gmail.com' && this.password === '1234') {
 
-      this.router.navigate(["/home"]); // FALTA CRIAR O MEU PRA FAZER O CAMINHO DO LOGIN
+      this.router.navigate(["/home"]); // FALTA CRIAR O MEU PRA FAZER O CAMINHO DO LOGIM
     } else {
       this.errorMessage = 'Usuário ou senha incorretos. Tente novamente.';
-    }
+    } 
   }
+
+VaiProCadastro(){
+  this.router.navigate(["/cadastro"])
+}
+
 }
