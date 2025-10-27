@@ -1,5 +1,5 @@
-<main>
-    <div>
+<main class="cadastro">
+    <div class="box">
         <h1>Criar Nova Conta AQUI!</h1>
         <form (ngSubmit)="onCadatro()">
             <label for="name">Nome</label>
@@ -35,11 +35,14 @@
             <label for="Nasc">Data de Nascimento</label>
             <input 
 
-                type="data"
+                type="date"
                 id="data"
                 [(ngModel)]="data"
                 name="data"
                 required>
+
+            <button type="submit" class="">Cadastra-se</button>
+
         </form>
     </div>
 </main>
