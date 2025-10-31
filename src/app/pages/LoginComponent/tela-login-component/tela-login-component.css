@@ -19,9 +19,11 @@
 }
 
 .login-logo {
-    width: 100px;
-    margin-bottom: 2rem;
-    border-radius: 15px;
+  display: flex;            
+  margin: 0 auto 2rem auto;  
+  width: 120px;              
+  height: auto;              
+  border-radius: 15px;       
 }
 
 form {
