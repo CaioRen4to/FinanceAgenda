@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TelaIncialComponent } from '../../HomeComponent/tela-incial-component/tela-incial-component';
+
 
 @Component({
   selector: 'app-tela-login-component',
   standalone: true,
-  imports: [FormsModule, CommonModule, TelaIncialComponent],
+  imports: [FormsModule, CommonModule],
   templateUrl: './tela-login-component.html',
   styleUrl: './tela-login-component.css'
 })
