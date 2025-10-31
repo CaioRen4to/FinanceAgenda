@@ -12,22 +12,28 @@ import { TelaIncialComponent } from '../../HomeComponent/tela-incial-component/t
   styleUrl: './tela-login-component.css'
 })
 
-export class TelaLoginComponent {
+export class TelaLoginComponent { 
 
   username: string = '';
   password: string = '';
-  errorMessage: string = '';
+  message: string = '';
 
   constructor(private router: Router) {}
 
   onLogin() {
-    if (this.username === 'admin@gmail.com' && this.password === '1234') {
+    const userData = localStorage.getItem('user');
+    if (!userData) {
+      this.message = 'Nenhum usuário cadastrado!'
+      return;
+    }
 
-      this.router.navigate(["/home"]); // FALTA CRIAR O MEU PRA FAZER O CAMINHO DO LOGIM
+    const user = JSON.parse(userData);
+    if (this.username === user.email && this.password === user.password) {
+      this.router.navigate(['/home']);
     } else {
-      this.errorMessage = 'Usuário ou senha incorretos. Tente novamente.';
-    } 
-  }
+      this.message = 'E-mail ou senha estão incorretos!'
+    }
+}
 
 VaiProCadastro(){
   this.router.navigate(["/cadastro"])
