@@ -1,10 +1,10 @@
-<main class="cadastro">
-    <div class="box">
-        <h1>Criar Nova Conta</h1>
-        <form (ngSubmit)="onCadatro()">
+<main class="cadastro">       
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Cadastre-se</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="name">Nome</label>
             <input 
-
                 type="text"
                 id="nome"
                 [(ngModel)] ="nome"
@@ -21,7 +21,7 @@
                 name="email"
                 placeholder="nome@exemplo.com"
                 required>
-
+            
             <label for="password">Senha</label>
             <input 
 
