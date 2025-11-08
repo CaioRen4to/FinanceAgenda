@@ -29,7 +29,7 @@
                 id="password"
                 [(ngModel)]="password"
                 name="password"
-                placeholder="•••••••••"
+                placeholder=""
                 required>
 
             <label for="Nasc">Data de Nascimento</label>
@@ -41,9 +41,12 @@
                 name="data"
                 required>
 
-            <button type="submit" class="btn">Cadastra-se</button>
+            <form #cadastro="ngForm" class="cadastro" (ngSubmit)="onCadastro()"> 
 
-            <p *ngIf="message">{{ message }}</p>
+                <button type="submit" class="btn-login">Cadastra-se</button>
+                <div *ngIf="message" class="error">{{ message }}</div>
+                
+            </form>
 
         </form>
     </div>

@@ -1,1 +1,22 @@
-<h1>teste</h1>
+<main>
+    <div>
+        <form method="POST" class="Captura_dados">
+            <h3>Digite os seus dados aqui embaixo: </h3>
+
+            <label for="Salario">Salario: {{ salario }} </label>
+            <input type="text"
+                    id="salario"
+                    name="salario"
+                    placeholder="Digite o seu salario liquido ou bruto"
+                    required>
+
+            <label for="Despesas">Despesas: {{ despesas }}</label>
+            <input type="text"
+                    id="despesas"
+                    name="despesas"
+                    placeholder="Gastos"
+                    required>
+
+        </form>
+    </div>
+</main>

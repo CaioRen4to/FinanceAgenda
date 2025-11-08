@@ -22,16 +22,38 @@ export class CadastroComponent {
   data: String = ''
   message: String = ''
 
-onCadatro() {
-  if (!this.nome || !this.email || !this.password) {
-    this.message = "Prencha todos os dados!"
-    return
+onCadastro() {
+    if (!this.nome || !this.email || !this.password || !this.data) {
+        this.message = "Preencha todos os campos obrigatórios!";
+        return;
     }
-    
-    const user = {nome: this.nome, email: this.email, password: this.password, data: this.data};
-    localStorage.setItem('user', JSON.stringify(user))
 
-    this.message = "ACESSO CONCEDIDO!"
-    setTimeout(() => this.router.navigate(['/login']),1500);
-  }
+    const newUser = {
+        nome: this.nome,
+        email: this.email,
+        password: this.password,
+        data: this.data
+    };
+
+    // Recuperar usuários existentes (ou iniciar um array vazio)
+    const usersJson = localStorage.getItem('users');
+    let users: any[] = usersJson ? JSON.parse(usersJson) : [];
+    
+    // Verificar se o e-mail já está cadastrado
+    const existingUser = users.find(u => u.email === this.email);
+    if (existingUser) {
+        this.message = "Este e-mail já está cadastrado. Tente fazer login.";
+        return;
+    }
+    // Adicionar o novo usuário e salvar o array atualizado
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    this.message = "Cadastro realizado com sucesso! Redirecionando para o Login...";
+    
+    // Redirecionar para a página de login
+    setTimeout(() => {
+        this.router.navigate(['/login']); 
+    }, 1500);
+ }
 }

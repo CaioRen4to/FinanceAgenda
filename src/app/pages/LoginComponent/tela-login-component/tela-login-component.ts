@@ -22,22 +22,32 @@ export class TelaLoginComponent {
   constructor(private router: Router) {}
 
   onLogin() {
-    const userData = localStorage.getItem('user');
-    if (!userData) {
-      this.message = 'Nenhum usuário cadastrado!'
-      return;
+    
+    // AQUI: Recuperar o array de usuários e não um único 'user'
+    const usersJson = localStorage.getItem('users');
+
+    if (!usersJson) {
+        this.message = "Nenhum usuário cadastrado.";
+        return;
     }
 
-    const user = JSON.parse(userData);
-    if (this.username === user.email && this.password === user.password) {
-      this.router.navigate(['/home']);
+    const users: any[] = JSON.parse(usersJson);
+
+    // Buscar o usuário com email e senha correspondentes
+    const foundUser = users.find(user => 
+        user.email === this.username && user.password === this.password
+    );
+    
+    if (foundUser) {
+
+        setTimeout(() => {
+        this.router.navigate(['/home']); 
+      }, 1500);
+
     } else {
-      this.message = 'E-mail ou senha estão incorretos!'
+
+        this.message = "Email e/ou senha incorretos!";
+
     }
-}
-
-VaiProCadastro(){
-  this.router.navigate(["/cadastro"])
-}
-
+ }
 }
