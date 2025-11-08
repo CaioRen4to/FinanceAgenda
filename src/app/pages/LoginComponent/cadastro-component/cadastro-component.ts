@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Button } from "../../ComponentCompartilhado/button/button";
 
 
 @Component({
   selector: 'app-cadastro-component',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, Button],
   templateUrl: './cadastro-component.html',
   styleUrl: './cadastro-component.css'
 })
@@ -24,7 +25,7 @@ export class CadastroComponent {
 
 onCadastro() {
     if (!this.nome || !this.email || !this.password || !this.data) {
-        this.message = "Preencha todos os campos obrigatórios!";
+        this.message = "Preencher todos os campos obrigatórios!";
         return;
     }
 

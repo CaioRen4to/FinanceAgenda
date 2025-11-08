@@ -43,7 +43,7 @@
 
             <form #cadastro="ngForm" class="cadastro" (ngSubmit)="onCadastro()"> 
 
-                <button type="submit" class="btn-login">Cadastra-se</button>
+                <app-button label="Cadastrar"></app-button>
                 <div *ngIf="message" class="error">{{ message }}</div>
                 
             </form>

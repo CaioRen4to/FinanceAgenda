@@ -4,7 +4,7 @@
   <img src="/img/Logo.png" alt="Logo">
     <h1 class="titulo">Finance Agend</h1>
   </div>
-  
+
   <div class="login-box">
 
     <form (ngSubmit)="onLogin()">
@@ -38,11 +38,10 @@
       </div>
 
       
-      <app-button label="Login"></app-button>
+      <app-button label="Login" class="btn-login"></app-button>
 
       <app-button label="Cadastra-se" [routerLink]="['/cadastro']" routerLinkActive="router-link-active" class="btn-cadastro" ></app-button>
     
-
       <p *ngIf="message" class="error">{{ message }}</p>
     </form>
   </div>

@@ -85,24 +85,6 @@ input[type="password"]:focus {
   cursor: pointer;
 }
 
-.btn-login {
-  
-  background: linear-gradient(90deg, #1dc328);
-  color: #ffffff;
-  border: none;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  font-weight: bold;
-  transition: all linear 160ms;
-  cursor: pointer;
-}
-
-.btn-login:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
 
 .error {
   color: #ff0800;
@@ -110,23 +92,6 @@ input[type="password"]:focus {
   margin-top: 1rem;
 }
 
-.btn-cadastro {
-  background: linear-gradient(90deg, #1dc328);
-  color: #ffffff;
-  border: none;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  font-weight: bold;
-  transition: all linear 160ms;
-  cursor: pointer;
-}
-
-.btn-cadastro:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
 
 @media (max-width: 480px) {
   .formLogin, .login-box {
