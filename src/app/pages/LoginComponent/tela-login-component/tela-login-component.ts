@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Button } from "../../ComponentCompartilhado/button/button";
 
 
 @Component({
   selector: 'app-tela-login-component',
   standalone: true,
-  imports: [FormsModule, CommonModule, Button, RouterLink],
+  imports: [FormsModule, CommonModule, Button, RouterLink, RouterLinkActive],
   templateUrl: './tela-login-component.html',
   styleUrl: './tela-login-component.css'
 })
