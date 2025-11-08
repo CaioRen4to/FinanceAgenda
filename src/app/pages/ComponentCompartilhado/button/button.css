@@ -4,6 +4,8 @@
   color: #ffffff;
   border: none;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
   padding: 10px;
   font-weight: bold;
   transition: all linear 160ms;
