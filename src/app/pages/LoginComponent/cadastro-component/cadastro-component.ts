@@ -32,6 +32,6 @@ onCadatro() {
     localStorage.setItem('user', JSON.stringify(user))
 
     this.message = "ACESSO CONCEDIDO!"
-    setTimeout(() => this.router.navigate(['/login']), 1500);
+    setTimeout(() => this.router.navigate(['/login']),1500);
   }
 }

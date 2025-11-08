@@ -4,7 +4,7 @@ import { CabecalhoComponent } from '../cabecalho-component/cabecalho-component';
 
 @Component({
   selector: 'app-tela-incial-component',
-  imports: [RouterOutlet, CabecalhoComponent],
+  imports: [CabecalhoComponent],
   templateUrl: './tela-incial-component.html',
   styleUrl: './tela-incial-component.css'
 })

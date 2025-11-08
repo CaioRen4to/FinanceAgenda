@@ -6,7 +6,7 @@ import { TelaIncialComponent } from './pages/HomeComponent/tela-incial-component
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LoginComponent, TelaIncialComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

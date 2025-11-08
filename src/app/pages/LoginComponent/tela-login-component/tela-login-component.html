@@ -32,9 +32,11 @@
         <label for="rememberMe">Lembrar de mim</label>
       </div>
 
-      <button type="submit" class="btn-login">Entrar</button>
       
-      <button type="button" (click)="VaiProCadastro()" class="btn-cadastro">Cadastra-se</button>
+      <app-button label="Login"></app-button>
+
+      <app-button label="Cadastra-se" [routerLink]="['/cadastro']" routerLinkActive="router-link-active"  ></app-button>
+    
 
       <p *ngIf="message" class="error">{{ message }}</p>
     </form>
