@@ -1,51 +1,52 @@
 
-  <div class="login">
-    <div class="login-box">
-      <h2>Bem vindo</h2>
-      <p>Faça login para continuar para o seu painel de controle.</p>
+<div class="login">
 
-      <form (ngSubmit)="onLogin()">
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          id="email"
-          [(ngModel)]="username"
-          name="email"
-          placeholder="nome@exemplo.com"
-          required
-        />
+<div class="marca__logo" aria-hidden="true"><img src="/img/Logo.png" alt="Logo" /></div>
+    <div class="marca__text">
+    <h1 class="marca__title">Finance Agenda</h1>
+    <p class="marca__subtitle">Intelligent Financial Management</p>
+</div>
 
-        <label for="password">Senha</label>
+  <div class="login-box">
+    <h2>Bem vindo</h2>
+    <p>Faça login para continuar para o seu painel de controle.</p>
 
-        <input
-          type="password"
-          id="password"
-          [(ngModel)]="password"
-          name="password"
-          placeholder="•••••••••"
-          required
-        />
+    <form (ngSubmit)="handleLogin()">
+      
+      <app-forms
+        [title]="''"
+        [fields]="loginFields"
+        (dataChange)="updateFormData($event)"
+        class="title"
+      ></app-forms>
 
-        <div class="checkbox">
-          <input type="checkbox" id="rememberMe" />
+      
+      <div class="checkbox">
+        <input type="checkbox" id="rememberMe" />
+        <label for="rememberMe">Lembrar de mim</label>
+        <a href="#" class="forgot">Esqueceu a senha?</a>
+      </div>
 
-          <label for="rememberMe">Lembrar de mim</label>
-          <a href="#" class="forgot">Esqueceu a senha ?</a>
-        </div>
+      
+      <app-button 
+        label="Login" 
+        class="btn-login"
+      ></app-button>
 
-        <app-button label="Login" class="btn-login"></app-button>
+      
+      <div *ngIf="message" class="error">{{ message }}</div>
+    </form>
 
-        <div class="social-login">
-          <button class="btn-social">Google</button>
-          <button class="btn-social">GitHub</button>
-        </div>
-
-        <p class="cadastro-texto">
-          Você não tem uma conta? <a [routerLink]="['/cadastro']">Criar Conta</a>
-        </p>
-
-        <p *ngIf="message" class="error">{{ message }}</p>
-      </form>
+   
+    <div class="social-login">
+      <button class="btn-social">Google</button>
+      <button class="btn-social">GitHub</button>
     </div>
-  </div>
 
+    
+    <p class="cadastro-texto">
+      Você não tem uma conta? 
+      <a [routerLink]="['/cadastro']">Criar Conta</a>
+    </p>
+  </div>
+</div>

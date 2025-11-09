@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TelaLoginDireita } from './tela-login-direita';
+import { Forms } from './forms';
 
-describe('TelaLoginDireita', () => {
-  let component: TelaLoginDireita;
-  let fixture: ComponentFixture<TelaLoginDireita>;
+describe('Forms', () => {
+  let component: Forms;
+  let fixture: ComponentFixture<Forms>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TelaLoginDireita]
+      imports: [Forms]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TelaLoginDireita);
+    fixture = TestBed.createComponent(Forms);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
