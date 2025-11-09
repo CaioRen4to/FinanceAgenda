@@ -1,89 +1,150 @@
-.page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #0e1116;
-    font-family: 'inter', sans-serif;                                           
+.cadastro-container {
+  display: flex;
+  height: 100vh;
+  background-color: #0e1116;
+  font-family: 'Inter', sans-serif;
 }
 
-.formLogin {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 7px;
-    padding: 60px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
+.cadastro-info {
+  flex: 1;
+  background: linear-gradient(180deg, #16c79a, #10b39d);
+  color: #fff;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.areaLogin img {
-    width: 420px;
+.cadastro-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-.formLogin h1 {
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-    font-size: 2.3em;
-}
-
-.formLogin p {
-    display: inline-block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.formLogin input {
-    padding: 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 4px;
-    transition: all linear 160ms;
-    outline: none;
-}
-
-
-.formLogin input:focus {
-    border: 1px solid linear-gradient(90deg, #075013,#216010);
-}
-
-.formLogin label {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.formLogin a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #555;
-    transition: all linear 160ms;
-}
-
-.formLogin a:hover {
-    color: linear-gradient(90deg, #075013,#216010);
-}
-
-.btn {
-  background: linear-gradient(90deg, #1dc328);
+.cadastro-info span {
   color: #ffffff;
-  border: none;
-  border-radius: 30px;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all linear 160ms;
-  cursor: pointer;
 }
 
-.btn:hover {
-  opacity: 1;
-  transform: scale(1.05);
+.cadastro-info p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.benefits h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits li {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.cadastro-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro-form {
+  background-color: #161b22;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  width: 380px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.cadastro-form h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.cadastro-form p {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.cadastro-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #eaeaea;
+}
+
+.cadastro-form input {
+  background-color: #111418;
+  border: 1px solid #2a2d33;
+  border-radius: 6px;
+  padding: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.cadastro-form input:focus {
+  border-color: #16c79a;
+  box-shadow: 0 0 4px rgba(22, 199, 154, 0.3);
+}
+
+.btn-primary {
+  background-color: #16c79a;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #13b38b;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #16c79a;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.error{
+    color: #fff;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+  .cadastro-container {
+    flex-direction: column;
+  }
+
+  .cadastro-info {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .cadastro-form-section {
+    padding: 2rem 0;
+  }
+
+  .cadastro-form {
+    width: 90%;
+  }
 }

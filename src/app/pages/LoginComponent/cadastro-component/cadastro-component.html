@@ -1,22 +1,39 @@
-<main class="cadastro">       
-    <div class="page">
-        <form method="POST" class="formLogin" (ngSubmit)="onCadastro()">
-            <h1>Cadastre-se</h1>
-            <p>Digite os seus dados de acesso no campo abaixo.</p>
+<main class="cadastro-container">
+  <!-- Lado esquerdo -->
+  <section class="cadastro-info">
+    <h1>Finance <span>Agenda</span></h1>
+    <p>Controle suas finanças com inteligência</p>
 
-            <app-forms
-            [title]="''"
-            [fields]="cadastroFields"
-            (dataChange)="updateFormData($event)"
-            ></app-forms>
-
-            <form #cadastro="ngForm" class="cadastro" (ngSubmit)="onCadastro()"> 
-
-                <app-button label="Cadastrar"></app-button>
-                <div *ngIf="message" class="error">{{ message }}</div>
-                
-            </form>
-
-        </form>
+    <div class="benefits">
+      <h2>Comece a organizar suas finanças hoje</h2>
+      <ul>
+        <li>✅ Registre receitas e despesas facilmente</li>
+        <li>✅ Visualize seu fluxo de caixa em gráficos</li>
+        <li>✅ Gerencie pagamentos recorrentes</li>
+      </ul>
     </div>
+  </section>
+
+  <section class="cadastro-form-section">
+    <form method="POST" class="cadastro-form" (ngSubmit)="onCadastro()">
+      <h1>Cadastre-se</h1>
+      <p>Digite os seus dados de acesso no campo abaixo.</p>
+
+      <app-forms
+        [title]="''"
+        [fields]="cadastroFields"
+        (dataChange)="updateFormData($event)"
+      ></app-forms>
+
+      <form #cadastro="ngForm" class="cadastro" (ngSubmit)="onCadastro()">
+
+        <app-button label="Cadastrar"></app-button>
+
+        <div *ngIf="message" class="error">{{ message }}</div>
+
+      </form>
+
+    </form>
+
+  </section>
 </main>

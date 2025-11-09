@@ -1,51 +1,58 @@
-
-<div class="login">
-
-<div class="marca__logo" aria-hidden="true"><img src="/img/Logo.png" alt="Logo" /></div>
-    <div class="marca__text">
-    <h1 class="marca__title">Finance Agenda</h1>
-    <p class="marca__subtitle">Intelligent Financial Management</p>
-</div>
-
-  <div class="login-box">
-    <h2>Bem vindo</h2>
-    <p>Faça login para continuar para o seu painel de controle.</p>
-
-    <form (ngSubmit)="onLogin()">
-      
-      <app-forms
-        [title]="''"
-        [fields]="loginFields"
-        (dataChange)="updateFormData($event)"
-      ></app-forms>
-
-      
-      <div class="checkbox">
-        <input type="checkbox" id="rememberMe" />
-        <label for="rememberMe">Lembrar de mim</label>
-        <a href="#" class="forgot">Esqueceu a senha?</a>
-      </div>
-
-      
-      <app-button 
-        label="Login" 
-        class="btn-login"
-      ></app-button>
-
-      
-      <div *ngIf="message" class="error">{{ message }}</div>
-    </form>
-
-   
-    <div class="social-login">
-      <button class="btn-social">Google</button>
-      <button class="btn-social">GitHub</button>
+<div class="login-container">
+  <section class="login-info">
+    <div class="logo">
+      <img src="logo" alt="Finance Agenda Logo" />
+      <h1>Finance Agenda</h1>
+      <p>Intelligent Financial Management</p>
     </div>
 
-    
-    <p class="cadastro-texto">
-      Você não tem uma conta? 
-      <a [routerLink]="['/cadastro']">Criar Conta</a>
+    <h2>Assuma o controle do seu futuro financeiro.</h2>
+    <p>
+      Acompanhe as despesas, monitore a receita e alcance seus objetivos financeiros com insights
+      poderosos e ferramentas intuitivas.
     </p>
-  </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>100%</h3>
+        <p>Clareza Financeira</p>
+      </div>
+      <div class="feature">
+        <h3>Segurança</h3>
+        <p>Segurança em nível de banco</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-form">
+    <div class="login-box">
+      <h2>Bem vindo</h2>
+      <p>Faça login para continuar para o seu painel de controle.</p>
+
+      <form (ngSubmit)="onLogin()">
+        <app-forms
+          [title]="''"
+          [fields]="loginFields"
+          (dataChange)="updateFormData($event)"
+        ></app-forms>
+
+        <div class="options">
+          <input type="checkbox" />
+          <label for="rememberMe">Lembrar de mim</label>
+          <a href="#" class="forgot">Esqueceu a senha?</a>
+        </div>
+
+        <app-button label="Login" class="btn-login"></app-button>
+        <app-button label="Cadastra-se" [routerLink]="['/cadastro']" routerLinkActive="router-link-active"  ></app-button>
+
+        <div class="divider">Ou continue assim</div>
+        <div class="social-buttons">
+          <button class="btn-social google">G</button>
+          <button class="btn-social github">GitHub</button>
+        </div>
+
+        <div *ngIf="message" class="error">{{ message }}</div>
+      </form>
+    </div>
+  </section>
 </div>

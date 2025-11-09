@@ -7,22 +7,35 @@ form {
 }
 
 input {
-  color: #fff;
-  margin: 10px;
-  padding: 14px;
+  background-color: #111418;
+  border: 1px solid #2a2d33;
+  border-radius: 6px;
+  padding: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
   width: 90%;
-  background-color: #1e2228;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .formLogin input:focus,
 input {
-  border-color: #1dc328;
-  box-shadow: 0 0 8px rgba(29, 195, 40, 0.3);
+  border-color: #16c79a;
+  box-shadow: 0 0 4px rgba(22, 199, 154, 0.3);
+}
+
+.formLogin a:hover,
+a { 
+  color: #1dc328;
+  text-decoration: underline;
+}
+
+.formLogin label,
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #eaeaea;
+  display: block;
+  margin-bottom: 0.3rem;
 }
 
 .title-label {
