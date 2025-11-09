@@ -1,6 +1,6 @@
 <main class="page">
     <div class="box-dados">
-        <form method="POST" (ngSubmit)="SalvaDados()" class="Captura_dados" >
+        <form method="POST" (ngSubmit)="SalvarDados()" class="Captura_dados" >
             <h3>Digite os seus dados aqui embaixo: </h3>
 
             <app-forms
@@ -9,6 +9,11 @@
             (dataChange)="updateFormData($event)"
             ></app-forms>
 
+        <form #cadastro="ngForm" class="cadastro" (ngSubmit)="SalvarDados()">
+        <app-button label="Salvar"></app-button>
+
+        <div *ngIf="message" class="error">{{ message }}</div>
+      </form>
         </form>
     </div>
 </main>

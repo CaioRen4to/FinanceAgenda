@@ -20,13 +20,13 @@ export class TelaLoginComponent {
   loginFields = [
     { 
       name: 'email', 
-      type: 'email', 
+      type: 'text', 
       placeholder: 'nome@exemplo.com', 
       label: 'E-mail' 
     },
     { 
       name: 'password', 
-      type: 'password', 
+      type: 'text', 
       placeholder: '••••••••', 
       label: 'Senha' 
     }

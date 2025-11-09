@@ -22,25 +22,25 @@ export class CadastroComponent {
   cadastroFields = [
     {
         name: 'nome',
-        type: 'nome',
+        type: 'text',
         placeholder: 'Digite seu nome',
         label: 'Nome'
     },
     {
         name: 'email',
-        type: 'email',
+        type: 'text',
         placeholder: 'Digite seu e-mail',
         label: 'E-mail'
     },
     {
         name: 'password',
-        type: 'password',
+        type: 'text',
         placeholder: 'Digite sua senha',
         label: 'Senha'
     },
     {
         name: 'data',
-        type: 'data',
+        type: 'date',
         placeholder: 'Dia do nascimento',
         label: 'Data de Aniversario'
     }
