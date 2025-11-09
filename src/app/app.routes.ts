@@ -23,7 +23,7 @@ export const routes: Routes = [
     component: TelaIncialComponent
 },
   { 
-    path: 'teste', 
+    path: 'form', 
     component: FormDadosComponent
 },
 
