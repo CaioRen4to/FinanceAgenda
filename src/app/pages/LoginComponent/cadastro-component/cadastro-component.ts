@@ -40,7 +40,7 @@ export class CadastroComponent {
     },
     {
         name: 'data',
-        type: 'date',
+        type: 'dat',
         placeholder: 'Dia do nascimento',
         label: 'Data de Aniversario'
     }

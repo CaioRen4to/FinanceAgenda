@@ -1,66 +1,75 @@
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Forms } from "../../ComponentCompartilhado/forms/forms";
 import { Button } from "../../ComponentCompartilhado/button/button";
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-form-dados-component',
-  imports: [FormsModule, CommonModule, Forms, Button],
+  selector: 'app-form-dados',
+  standalone: true,
+  imports: [CommonModule, FormsModule, Forms, Button],
   templateUrl: './form-dados-component.html',
   styleUrl: './form-dados-component.css'
 })
 export class FormDadosComponent {
-[x: string]: any;
-
   message: string = '';
   formData: any = {};
-  
-  dadosFields = [ 
-    {
-      name: 'Salario',
-      type: 'number',
-      placeholder: 'Digite o seus proventos',
-      label: 'Salario'
+
+  dadosFields = [
+    { 
+      name: 'Salario', 
+      type: 'number', 
+      placeholder: 'Digite o seus proventos', 
+      label: 'Salário' 
     },
-    {
-      name: 'Despesas',
-      type: 'number',
-      placeholder: 'Digite as suas depesas',
-      label: 'Despesas'
+    { 
+      name: 'Despesas', 
+      type: 'number', 
+      placeholder: 'Digite as suas despesas', 
+      label: 'Despesas' 
     },
-    {
-      name: 'Data_comemorativa',
-      type: 'date',
-      placeholder: 'Digite uma data comemorartiva',
+    { 
+      name: 'Data_comemorativa', 
+      type: 'date', 
+      placeholder: 'Digite uma data comemorativa', 
       label: 'Data Comemorativa'
-    }
-  ]
+     }
+  ];
 
-constructor(private router: Router) {}
+  constructor(private router: Router) {} // ✅ injeção correta
 
-  updateFormData(data: any) {
+  updateFormData(data: any): void {
     this.formData = data;
-    console.log('Dados atualizados:', this.formData);
   }
 
+SalvarDados(): void {
+    if (!this.formData.Salario || !this.formData.Despesas || !this.formData.Data_comemorativa) {
+      this.message = 'Preencha todos os campos obrigatórios.';
+      return;
+    }
 
-SalvarDados(){
+    try {
+      localStorage.removeItem('formData');
 
-  if (this.formData.Salario && this.formData.Despesas) {
+      // Cria um novo array só com o envio atual
+      const dados = [{
+        Salario: Number(this.formData.Salario),
+        Despesas: Number(this.formData.Despesas),
+        Data_comemorativa: this.formData.Data_comemorativa
+      }];
 
-    localStorage.setItem('formData', this.formData.Salario.toString());
-    
-    console.log('Dados salvos:', this.formData);
-    this.message = 'Dados salvos com sucesso!';
-  } else {
-    this.message = 'Preencha os campos obrigatórios.';
-  }   
+      // Salva no localStorage
+      localStorage.setItem('formData', JSON.stringify(dados));
 
-  setTimeout(() => {
-    this.router.navigate(['/home']);
-  }, 1500);
+      this.message = 'Dados salvos com sucesso!';
 
- }
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 1000);
+
+    } catch {
+      this.message = 'Erro ao salvar dados.';
+    }
+  }
 }

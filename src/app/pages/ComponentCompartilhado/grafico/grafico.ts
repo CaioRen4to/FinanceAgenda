@@ -1,14 +1,70 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, AfterViewInit } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
+
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-grafico',
   standalone: true,
-  imports: [FormsModule, CommonModule],
   templateUrl: './grafico.html',
   styleUrl: './grafico.css'
 })
-export class Grafico {
+export class Grafico implements AfterViewInit {
+  chart: Chart | null = null;
 
+  ngAfterViewInit(): void {
+    const dados = this.buscarDados();
+    if (dados.length === 0) {
+      alert('Nenhum dado encontrado!');
+      return;
+    }
+
+    const totalSalario = dados.reduce((sum, item) => sum + item.Salario, 0);
+    const totalDespesas = dados.reduce((sum, item) => sum + item.Despesas, 0);
+
+    const canvas = document.getElementById('Grafico') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    if (this.chart) this.chart.destroy();
+
+    this.chart = new Chart(canvas, {
+      type: 'pie',
+      data: {
+        labels: ['Salário', 'Despesas'],
+        datasets: [{
+          data: [totalSalario, totalDespesas],
+          backgroundColor: ['rgba(75, 192, 192, 0.8)', 'rgba(255, 99, 132, 0.8)'],
+          borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: { display: true, text: 'FinanceAgend', font: { size: 18 } },
+          tooltip: {
+            callbacks: {
+              label: (context) => {
+                const value = context.parsed;
+                const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0) as number;
+                const percentage = ((value / total) * 100).toFixed(1);
+                return `${context.label}: R$ ${value.toFixed(2)} (${percentage}%)`;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  private buscarDados(): any[] {
+    try {
+      const dados = localStorage.getItem('formData');
+      return dados ? JSON.parse(dados) : [];
+    } catch {
+      return [];
+    }
+  }
 }

@@ -9,11 +9,11 @@
             (dataChange)="updateFormData($event)"
             ></app-forms>
 
-        <form #cadastro="ngForm" class="cadastro" (ngSubmit)="SalvarDados()">
+        
         <app-button label="Salvar"></app-button>
 
         <div *ngIf="message" class="error">{{ message }}</div>
-      </form>
+
         </form>
     </div>
 </main>
