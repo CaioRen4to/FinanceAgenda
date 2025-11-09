@@ -11,13 +11,12 @@
     <h2>Bem vindo</h2>
     <p>Faça login para continuar para o seu painel de controle.</p>
 
-    <form (ngSubmit)="handleLogin()">
+    <form (ngSubmit)="onLogin()">
       
       <app-forms
         [title]="''"
         [fields]="loginFields"
         (dataChange)="updateFormData($event)"
-        class="title"
       ></app-forms>
 
       

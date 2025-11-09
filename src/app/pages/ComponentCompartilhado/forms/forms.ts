@@ -18,13 +18,11 @@ export class Forms {
   formData: any = {};
 
   ngOnInit() {
-    // Inicializa formData com os campos vazios
     this.fields.forEach(field => {
       this.formData[field.name] = '';
     });
   }
 
-  // Emite os dados sempre que houver mudança
   onFieldChange() {
     this.dataChange.emit(this.formData);
   }

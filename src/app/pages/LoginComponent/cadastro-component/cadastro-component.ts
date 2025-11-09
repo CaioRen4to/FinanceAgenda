@@ -3,37 +3,67 @@ import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Button } from "../../ComponentCompartilhado/button/button";
+import { Forms } from "../../ComponentCompartilhado/forms/forms";
 
 
 @Component({
   selector: 'app-cadastro-component',
-  imports: [FormsModule, CommonModule, Button],
+  imports: [FormsModule, CommonModule, Button, Forms],
   templateUrl: './cadastro-component.html',
   styleUrl: './cadastro-component.css'
 })
 
 
 export class CadastroComponent {
-  
-  constructor(private router: Router) {}
 
-  nome: String = ''
-  email: String = ''
-  password: String = ''
-  data: String = ''
-  message: String = ''
+  message: string = '';
+  formData: any = {};
+
+  cadastroFields = [
+    {
+        name: 'nome',
+        type: 'nome',
+        placeholder: 'Digite seu nome',
+        label: 'Nome'
+    },
+    {
+        name: 'email',
+        type: 'email',
+        placeholder: 'Digite seu e-mail',
+        label: 'E-mail'
+    },
+    {
+        name: 'password',
+        type: 'password',
+        placeholder: 'Digite sua senha',
+        label: 'Senha'
+    },
+    {
+        name: 'data',
+        type: 'data',
+        placeholder: 'Dia do nascimento',
+        label: 'Data de Aniversario'
+    }
+  ];
+
+constructor(private router: Router) {}
+
+  updateFormData(data: any) {
+    this.formData = data;
+    console.log('Dados atualizados:', this.formData);
+  }
 
 onCadastro() {
-    if (!this.nome || !this.email || !this.password || !this.data) {
+    if (!this.formData.nome || !this.formData.email || !this.formData.password || !this.formData.data) {
         this.message = "Preencher todos os campos obrigatórios!";
         return;
     }
 
     const newUser = {
-        nome: this.nome,
-        email: this.email,
-        password: this.password,
-        data: this.data
+        nome: this.formData.nome,
+        email: this.formData.email,
+        password: this.formData.password,
+        data: this.formData.data
     };
 
     // Recuperar usuários existentes (ou iniciar um array vazio)
@@ -41,7 +71,7 @@ onCadastro() {
     let users: any[] = usersJson ? JSON.parse(usersJson) : [];
     
     // Verificar se o e-mail já está cadastrado
-    const existingUser = users.find(u => u.email === this.email);
+    const existingUser = users.find(u => u.email === this.formData.email);
     if (existingUser) {
         this.message = "Este e-mail já está cadastrado. Tente fazer login.";
         return;

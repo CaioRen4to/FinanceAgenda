@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './tela-login-component.css'
 })
 export class TelaLoginComponent {
+
   message: string = '';
   formData: any = {};
 
@@ -39,8 +40,8 @@ export class TelaLoginComponent {
     console.log('Dados atualizados:', this.formData);
   }
 
-  // Processa o login
-  handleLogin() {
+  
+  onLogin() {
     console.log('Tentando fazer login com:', this.formData);
 
     // Validar campos

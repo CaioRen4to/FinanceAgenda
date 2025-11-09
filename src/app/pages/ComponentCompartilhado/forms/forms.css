@@ -6,8 +6,7 @@ form {
   color: #ccccdc;
 }
 
-input[type='email'],
-input[type='password'] {
+input {
   color: #fff;
   margin: 10px;
   padding: 14px;
@@ -21,8 +20,7 @@ input[type='password'] {
 }
 
 .formLogin input:focus,
-input[type='email']:focus,
-input[type='password']:focus {
+input {
   border-color: #1dc328;
   box-shadow: 0 0 8px rgba(29, 195, 40, 0.3);
 }

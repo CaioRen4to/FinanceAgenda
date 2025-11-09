@@ -5,12 +5,13 @@
 
     <label [for]="field.name" class="title-label">{{ field.label }}</label>
 
-    <input
+   <input
       [type]="field.type"
       [id]="field.name"
       [name]="field.name"
       [(ngModel)]="formData[field.name]"
       [placeholder]="field.placeholder"
+      (ngModelChange)="onFieldChange()"
       required
     />
   </div>
