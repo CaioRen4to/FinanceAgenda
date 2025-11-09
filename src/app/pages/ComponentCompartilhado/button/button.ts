@@ -9,6 +9,4 @@ import { RouterLink } from '@angular/router';
 })
 export class Button {
   @Input() label: string = '';
-
-  
 }
