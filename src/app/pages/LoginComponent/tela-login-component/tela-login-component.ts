@@ -31,6 +31,7 @@ export class TelaLoginComponent {
       label: 'Senha' 
     }
   ];
+public: any;
 
   constructor(private router: Router) {}
 
@@ -68,9 +69,11 @@ export class TelaLoginComponent {
     
     if (foundUser) {
       this.message = "Login realizado com sucesso!";
+      
       setTimeout(() => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/form']);
       }, 1500);
+
     } else {
       this.message = "Email ou senha incorretos.";
     }
