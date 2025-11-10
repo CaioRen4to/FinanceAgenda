@@ -28,7 +28,7 @@ export class Grafico implements AfterViewInit {
     if (this.chart) this.chart.destroy();
 
     this.chart = new Chart(canvas, {
-      type: 'pie',
+      type: 'line',
       data: {
         labels: ['Salário', 'Despesas'],
         datasets: [{
@@ -47,17 +47,16 @@ export class Grafico implements AfterViewInit {
           tooltip: {
             callbacks: {
               label: (context) => {
-                const value = context.parsed;
-                const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0) as number;
-                const percentage = ((value / total) * 100).toFixed(1);
-                return `${context.label}: R$ ${value.toFixed(2)} (${percentage}%)`;
-              }
+                const label = context.dataset.label || '';
+                const value = context.parsed.y || 0;
+                return `${label}: R$ ${value.toFixed(2)}`;
+              } 
             }
           }
         }
       }
     });
-  }
+}
 
   private buscarDados(): any[] {
     try {
