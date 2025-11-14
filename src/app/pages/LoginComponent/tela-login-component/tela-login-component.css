@@ -48,6 +48,10 @@
   margin-bottom: 0.25rem;
 }
 
+.logo img{
+  border-radius: 20px;
+}
+
 .login-form {
   flex: 1;
   display: flex;
