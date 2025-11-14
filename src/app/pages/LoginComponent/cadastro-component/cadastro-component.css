@@ -94,6 +94,10 @@
   box-shadow: 0 0 4px rgba(22, 199, 154, 0.3);
 }
 
+.btn-voltar {
+  margin: 10px;
+}
+
 .btn-primary {
   background-color: #16c79a;
   border: none;
@@ -148,3 +152,4 @@
     width: 90%;
   }
 }
+

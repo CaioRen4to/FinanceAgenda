@@ -29,6 +29,8 @@
         <app-button label="Cadastrar"></app-button>
 
         <div *ngIf="message" class="error">{{ message }}</div>
+
+        <app-button label="Voltar" [routerLink]="['/login']" routerLinkActive="router-link-active" class="btn-voltar"></app-button>
       </form>
     </form>
   </section>
