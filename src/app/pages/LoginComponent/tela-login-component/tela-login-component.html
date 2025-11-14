@@ -1,9 +1,9 @@
 <div class="login-container">
   <section class="login-info">
     <div class="logo">
-      <img src="img/logo-branca.png" alt="Finance Agenda Logo" />
+      <img src="/img/logo-amazonas.jpg" alt="Finance Agenda Logo" />
       <h1>Finance Agenda</h1>
-      <p>Intelligent Financial Management</p>
+      <p>Gestão Financeira Inteligente</p>
     </div>
 
     <h2>Assuma o controle do seu futuro financeiro.</h2>
@@ -37,21 +37,28 @@
         ></app-forms>
 
         <div class="options">
-          <input type="checkbox" />
-          <label for="rememberMe">Lembrar de mim</label>
+          <div class="rememberMe">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">Lembre de mim</label>
+          </div>
+
           <a href="#" class="forgot">Esqueceu a senha?</a>
         </div>
 
         <app-button label="Login" class="btn-login"></app-button>
-        <app-button label="Cadastra-se" [routerLink]="['/cadastro']" routerLinkActive="router-link-active"  ></app-button>
+        <app-button
+          label="Cadastra-se"
+          [routerLink]="['/cadastro']"
+          routerLinkActive="router-link-active"
+        ></app-button>
 
         <div class="divider">Ou continue assim</div>
         <div class="social-buttons">
-          <button class="btn-social google">G</button>
+          <button class="btn-social google">Google</button>
           <button class="btn-social github">GitHub</button>
         </div>
 
-        <div *ngIf="message" class="error">{{ message }}</div>
+        <div *ngIf="message" class="error">⚠️{{ message }}</div>
       </form>
     </div>
   </section>

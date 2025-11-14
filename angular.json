@@ -21,10 +21,11 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public"            
               }
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ]
           },

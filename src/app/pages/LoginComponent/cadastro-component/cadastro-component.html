@@ -1,10 +1,10 @@
 <main class="cadastro-container">
-  <!-- Lado esquerdo -->
   <section class="cadastro-info">
     <h1>Finance <span>Agenda</span></h1>
     <p>Controle suas finanças com inteligência</p>
 
     <div class="benefits">
+      
       <h2>Comece a organizar suas finanças hoje</h2>
       <ul>
         <li>✅ Registre receitas e despesas facilmente</li>
@@ -31,6 +31,11 @@
         <div *ngIf="message" class="error">{{ message }}</div>
 
         <app-button label="Voltar" [routerLink]="['/login']" routerLinkActive="router-link-active" class="btn-voltar"></app-button>
+        <div class="retorno-container">
+          <a href="/login" class="retorno">Volte ao inicio</a> 
+        </div>
+
+        <div *ngIf="message" class="error">⚠️{{ message }}</div>
       </form>
     </form>
   </section>

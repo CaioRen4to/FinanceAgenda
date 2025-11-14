@@ -48,6 +48,10 @@
   margin-bottom: 0.25rem;
 }
 
+.logo img {
+  border-radius: 20px;
+}
+
 .login-form {
   flex: 1;
   display: flex;
@@ -97,8 +101,52 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem;
-    color: #94a3b8;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-top: 0.5rem;
+  }
+
+  /* Container do checkbox + texto */
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* ajuste fino */
+    line-height: 1; /* evita o texto “puxar” a linha pra baixo */
+  }
+
+  /* Estilizando checkbox moderno */
+  .remember input[type='checkbox'] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #00d134; /* Verde bonito */
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .remember input[type='checkbox']:hover {
+    transform: scale(1.1);
+  }
+
+  .options label {
+    cursor: pointer;
+    color: #e2e8f0;
+    transition: 0.2s;
+  }
+
+  .options label:hover {
+    color: #00d134;
+  }
+
+  /* "Esqueceu a senha?" */
+  .options .forgot {
+    color: #00d134;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .options .forgot:hover {
+    text-decoration: underline;
   }
 
   .divider {
@@ -127,6 +175,29 @@
     background: #1f2937;
   }
 
+  .error {
+    background: linear-gradient(135deg, rgba(255, 60, 60, 0.2), rgba(255, 0, 0, 0.1));
+    border-left: 4px solid #ff4444;
+    color: #ff4d4d;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
+    animation: slideIn 0.35s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media (max-width: 900px) {
     .login-container {

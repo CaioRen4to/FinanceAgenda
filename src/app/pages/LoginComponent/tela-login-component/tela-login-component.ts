@@ -14,10 +14,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class TelaLoginComponent {
 
-  imagemLogo: string = 'img/logo-branca.png';
-
   message: string = '';
   formData: any = {};
+
 
   loginFields = [
     { 
@@ -80,4 +79,5 @@ public: any;
       this.message = "Email ou senha incorretos.";
     }
   }
-}
+  
+  }
