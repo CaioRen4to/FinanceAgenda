@@ -3,11 +3,12 @@ import { RouterOutlet } from "@angular/router";
 import { CabecalhoComponent } from '../cabecalho-component/cabecalho-component';
 import { Grafico } from "../../ComponentCompartilhado/grafico/grafico";
 import { CommonModule } from '@angular/common';
+import { Aside } from '../aside/aside';
 
 @Component({
   selector: 'app-tela-incial-component',
   standalone: true,
-  imports: [CabecalhoComponent, CommonModule, Grafico],
+  imports: [CabecalhoComponent, CommonModule, Grafico, Aside],
   templateUrl: './tela-incial-component.html',
   styleUrl: './tela-incial-component.css'
 })
