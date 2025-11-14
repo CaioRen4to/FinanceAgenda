@@ -44,40 +44,25 @@ public: any;
 
   
   onLogin() {
-    console.log('Tentando fazer login com:', this.formData);
+  const usersJson = localStorage.getItem('users');
+  const users = usersJson ? JSON.parse(usersJson) : [];
 
-    // Validar campos
-    if (!this.formData.email || !this.formData.password) {
-      this.message = "Preencha todos os campos!";
-      return;
-    }
+  const usuario = users.find((u: { email: any; password: any; }) => 
+    u.email === this.formData.email && 
+    u.password === this.formData.password
+  );
 
-    // Buscar usuários
-    const usersJson = localStorage.getItem('users');
-    
-    if (!usersJson) {
-      this.message = "Nenhum usuário cadastrado.";
-      return;
-    }
-    
-    const users: any[] = JSON.parse(usersJson);
-    
-    // Verificar credenciais
-    const foundUser = users.find(user => 
-      user.email === this.formData.email && 
-      user.password === this.formData.password
-    );
-    
-    if (foundUser) {
-      this.message = "Login realizado com sucesso!";
-      
-      setTimeout(() => {
-        this.router.navigate(['/form']);
-      }, 1500);
-
-    } else {
-      this.message = "Email ou senha incorretos.";
-    }
+  if (!usuario) {
+    this.message = "E-mail ou senha incorretos.";
+    return;
   }
-  
-  }
+
+  localStorage.setItem('userLogado', JSON.stringify(usuario));
+
+  this.message = "Login realizado!";
+
+  setTimeout(() => {
+     this.router.navigate(['/home']);
+  }, 1000);
+}
+}

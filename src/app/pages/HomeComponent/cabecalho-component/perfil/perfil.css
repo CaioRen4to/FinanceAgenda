@@ -1,0 +1,13 @@
+.perfi {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.avatar {
+    color: white;
+    border: 20px solid #00ca8e;
+    border-radius: 50%;
+}
