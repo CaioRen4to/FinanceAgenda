@@ -29,11 +29,10 @@
         <app-button label="Cadastrar"></app-button>
 
         <div class="retorno-container">
-          <label for="login"></label>
-          <a href="http://localhost:4200/login" class="retorno">Volte ao inicio</a> 
+          <a href="/login" class="retorno">Volte ao inicio</a> 
         </div>
 
-        <div *ngIf="message" class="error">{{ message }}</div>
+        <div *ngIf="message" class="error">⚠️{{ message }}</div>
       </form>
     </form>
   </section>

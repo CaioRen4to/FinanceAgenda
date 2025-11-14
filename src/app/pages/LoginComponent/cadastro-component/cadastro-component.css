@@ -46,22 +46,34 @@
   margin-bottom: 0.6rem;
 }
 
-.retorno-container{
+.retorno-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   font-size: 0.9rem;
-  margin: 20px 0px 0px 0px;
-  color: #94a3b8;
+  font-weight: 400;
+  color: #d6faff;
+  cursor: pointer;
+  transition: 0.25s ease;
+  width: 110px;
+  margin: 15px auto 0;
 }
 
-.retorno-container a{
+.retorno {
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: #94a3b8;
 }
 
-.retorno-container:hover{
-
+.retorno-container:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .cadastro-form-section {
@@ -142,10 +154,28 @@
   text-decoration: underline;
 }
 
-.error{
-    color: #fff;
-    margin-top: 1rem;
-    text-align: center;
+.error {
+  background: linear-gradient(135deg, rgba(255, 60, 60, 0.2), rgba(255, 0, 0, 0.1));
+  border-left: 4px solid #ff4444;
+  color: #ff4d4d;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 5px;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
+  animation: slideIn 0.35s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 900px) {
