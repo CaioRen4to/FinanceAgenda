@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Button } from "../../ComponentCompartilhado/button/button";
@@ -8,7 +8,7 @@ import { Forms } from "../../ComponentCompartilhado/forms/forms";
 
 @Component({
   selector: 'app-cadastro-component',
-  imports: [FormsModule, CommonModule, Button, Forms],
+  imports: [FormsModule, CommonModule, Button, Forms, RouterModule],
   templateUrl: './cadastro-component.html',
   styleUrl: './cadastro-component.css'
 })

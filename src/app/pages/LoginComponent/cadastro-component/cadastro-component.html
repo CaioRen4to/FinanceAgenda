@@ -4,6 +4,7 @@
     <p>Controle suas finanças com inteligência</p>
 
     <div class="benefits">
+      
       <h2>Comece a organizar suas finanças hoje</h2>
       <ul>
         <li>✅ Registre receitas e despesas facilmente</li>
@@ -28,6 +29,12 @@
         <app-button label="Cadastrar"></app-button>
 
         <div *ngIf="message" class="error">{{ message }}</div>
+
+        <div class="retorno-container">
+          <a href="/login" class="retorno">Volte ao inicio</a> 
+        </div>
+
+        <div *ngIf="message" class="error">⚠️{{ message }}</div>
       </form>
     </form>
   </section>
