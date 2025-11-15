@@ -52,8 +52,10 @@ Cadastro de múltiplos perfis financeiros
 
 Caio Renato — Desenvolvedor do Projeto 
 🔗 GitHub: https://github.com/CaioRen4to 
+
 🔗 LinkedIn: https://www.linkedin.com/in/caio-renato-147451358
 
 Gabriel Coutinho - Desenvolvedor do Projeto 
 🔗 GitHub: https://github.com/gabrielcoutinhoDL 
+
 🔗 LinkedIn: https://www.linkedin.com/in/gabriel-coutinho-974864311
