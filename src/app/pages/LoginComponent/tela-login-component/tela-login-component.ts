@@ -62,7 +62,7 @@ public: any;
   this.message = "Login realizado!";
 
   setTimeout(() => {
-     this.router.navigate(['/home']);
+     this.router.navigate(['/form']);
   }, 1000);
 }
 }

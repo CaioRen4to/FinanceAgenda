@@ -28,7 +28,7 @@ export class Grafico implements AfterViewInit {
     if (this.chart) this.chart.destroy();
 
     this.chart = new Chart(canvas, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ['Salário', 'Despesas'],
         datasets: [{
