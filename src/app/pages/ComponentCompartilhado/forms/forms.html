@@ -1,18 +1,26 @@
-<h2 *ngIf="title">{{ title }}</h2>
+<div>
+  @if (title) {
+    <h3>{{ title }}</h3>
+  }
+  <div class="login">
 
-<div class="login">
-  <div *ngFor="let field of fields" class="login-box">
+    <div>
+      @for (field of fields; track field.name) {
+        <div class="login-box">
+          <label [for]="field.name" class="title-label">{{ field.label }}</label>
 
-    <label [for]="field.name" class="title-label">{{ field.label }}</label>
+          <input
+            [type]="field.type"
+            [id]="field.name"
+            [name]="field.name"
+            [(ngModel)]="formData[field.name]"
+            [placeholder]="field.placeholder"
+            (ngModelChange)="onFieldChange()"
+            required
+          />
+        </div>
+      }
+    </div>
 
-   <input
-      [type]="field.type"
-      [id]="field.name"
-      [name]="field.name"
-      [(ngModel)]="formData[field.name]"
-      [placeholder]="field.placeholder"
-      (ngModelChange)="onFieldChange()"
-      required
-    />
   </div>
 </div>
