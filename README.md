@@ -5,14 +5,23 @@ eficiente e visualmente clara para quem deseja organizar seus gastos mensais, re
 
 É uma solução pensada tanto para usuários comuns que querem organizar sua rotina financeira, quanto para empresas que desejam uma base inicial para sistemas de controle interno.
 
+
+
 🛠 Tecnologias Utilizadas
 
 Angular 17 
+
 TypeScript 
+
 Chart.js 
+
 HTML5 + CSS3 
+
 LocalStorage API 
+
 Componentização Angular (Standalone Components)
+
+
 
 ✨ Funcionalidades
 
@@ -27,6 +36,8 @@ Gráfico gerado automaticamente com Chart.js
 Interface simples e responsiva 
 
 Separação de responsabilidades por componentes
+
+
 
 🚀 Como executar o projeto
 
@@ -48,6 +59,8 @@ ng serve
 
 5 - Acesse no navegador: 👉 http://localhost:4200
 
+
+
 📌 Roadmap (Melhorias Futuras)
 
 Integração com backend real (Node.js / NestJS) 
@@ -63,6 +76,8 @@ Modo escuro
 Persistência em banco de dados
 
 Cadastro de múltiplos perfis financeiros
+
+
 
 👤 Autores
 
