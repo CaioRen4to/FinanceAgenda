@@ -7,45 +7,61 @@ eficiente e visualmente clara para quem deseja organizar seus gastos mensais, re
 
 🛠 Tecnologias Utilizadas
 
-Angular 17 TypeScript Chart.js HTML5 + CSS3 LocalStorage API Componentização Angular (Standalone Components)
+Angular 17 
+TypeScript 
+Chart.js 
+HTML5 + CSS3 
+LocalStorage API 
+Componentização Angular (Standalone Components)
 
 ✨ Funcionalidades
 
 Cadastro de usuários Login com validação de e-mail 
+
 Armazenamento de dados no LocalStorage 
+
 Registro de salário e despesas 
+
 Gráfico gerado automaticamente com Chart.js 
+
 Interface simples e responsiva 
+
 Separação de responsabilidades por componentes
 
 🚀 Como executar o projeto
 
-Clonar o repositório:
+1 - Clonar o repositório:
 
 git clone https://github.com/SEU-USUARIO/FinanceAgend.git
 
-Entrar na pasta:
+2 - Entrar na pasta:
 
 cd FinanceAgend
 
-Instalar dependências:
+3 - Instalar dependências:
 
 npm install
 
-Rodar o servidor Angular:
+4 - Rodar o servidor Angular:
 
 ng serve
 
-Acesse no navegador: 👉 http://localhost:4200
+5 - Acesse no navegador: 👉 http://localhost:4200
 
 📌 Roadmap (Melhorias Futuras)
 
 Integração com backend real (Node.js / NestJS) 
+
 Dashboard financeiro completo 
+
 Exportar dados em PDF ou Excel 
+
 Notificações para datas especiais 
+
 Modo escuro 
+
 Persistência em banco de dados
+
 Cadastro de múltiplos perfis financeiros
 
 👤 Autores
