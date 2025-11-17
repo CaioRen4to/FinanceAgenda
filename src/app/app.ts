@@ -1,7 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './pages/LoginComponent/login-component/login-component';
-import { TelaIncialComponent } from './pages/HomeComponent/tela-incial-component/tela-incial-component';
 
 
 @Component({
@@ -12,5 +10,5 @@ import { TelaIncialComponent } from './pages/HomeComponent/tela-incial-component
 })
 
 export class App {
-  protected readonly title = signal('Teste');
+  protected readonly title = signal('FinanceAgend');
 }
