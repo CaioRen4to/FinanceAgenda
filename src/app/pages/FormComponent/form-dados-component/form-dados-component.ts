@@ -37,7 +37,7 @@ export class FormDadosComponent {
      }
   ];
 
-  constructor(private router: Router) {} // ✅ injeção correta
+  constructor(private router: Router) {} 
 
   updateFormData(data: any): void {
     this.formData = data;
