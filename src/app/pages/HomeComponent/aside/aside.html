@@ -1,9 +1,51 @@
-<nav aria-label="Menu lateral">
-    <ul>
-      <li><a href="/home" class="active">Inicio</a></li>
-      <li><a href="#">Metas</a></li>
-      <li><a href="#">Declaração</a></li>
-      <li><a href="#">Cartões</a></li>
-      <li><a href="#">Relatórios</a></li>
+<nav class="sidebar" aria-label="Navegação Principal do Dashboard">
+
+    <header class="sidebar-branding">
+        <div class="app-logo" aria-hidden="true">
+            <a href="/home" class="icon-chart"><img src="/verde 512x512.png" alt="logo"></a>
+        </div>
+        <div class="app-titles">
+            <span class="app-name">Finance Agenda</span>
+            <span class="app-tagline">Financial Control</span>
+        </div>
+    </header>
+    
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a href="/home" class="nav-link active" aria-current="page">
+                <span class="icon">🏠</span>
+                Início
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/goals" class="nav-link">
+                <span class="icon">🎯</span>
+                Metas
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/statement" class="nav-link">
+                <span class="icon">📄</span>
+                Declaração
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/cards" class="nav-link">
+                <span class="icon">💳</span>
+                Cartões
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/reports" class="nav-link">
+                <span class="icon">📈</span>
+                Relatórios
+            </a>
+        </li>
     </ul>
-  </nav>
+
+    <a href="/schedule-add" class="btn-add-schedule">
+        <span class="icon-plus">+</span>
+        Adicionar Agendamento
+    </a>
+
+</nav>

@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Aside } from '../../HomeComponent/aside/aside';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, Aside],
   templateUrl: './forms.html',
   styleUrl: './forms.css'
 })
