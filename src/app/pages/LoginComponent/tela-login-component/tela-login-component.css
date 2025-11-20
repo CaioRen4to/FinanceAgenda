@@ -1,65 +1,84 @@
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
-  height: 100vh;
-  background: radial-gradient(circle at 10% 20%, #0b0f10, #060708);
-  color: #e2e8f0;
-  font-family: 'Inter', sans-serif;
-  padding: 0 4rem;
+
+.login-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    height: 100vh;
+    background: radial-gradient(circle at 10% 20%, #0b0f10, #060708);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    padding: 0 4rem;
 }
 
-.login-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 4rem;
+/* 2. Estilos da Coluna de Informações */
+.login-pitch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 4rem;
 }
 
-.login-info img {
-  width: 64px;
-  margin-bottom: 1rem;
+.branding img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    border-radius: 20px;
 }
 
-.login-info h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.5rem;
+.app-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
 }
 
-.login-info p {
-  color: #94a3b8;
-  margin-bottom: 2rem;
-  line-height: 1.5;
+.tagline, .pitch-description {
+    color: #94a3b8;
+    line-height: 1.5;
 }
 
-.features {
-  display: flex;
-  gap: 2rem;
+.pitch-description {
+    margin-bottom: 2rem;
 }
 
-.feature h3 {
-  color: #00ffa3;
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
+.features-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none; /* remove marcadores padrão de listas */
+    padding: 0;
+    margin: 0;
 }
 
-.logo img {
-  border-radius: 20px;
+.feature-item {
+    background-color: #0f1315;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid #5c5f63;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.login-form {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 4rem;
+.feature-item h3 {
+    color: #00ffa3;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
 
-  .login-box {
+/* 3. Estilos da Coluna de Formulário */
+.login-form-container { /* Mantém o nome da classe, mas é a tag <form> */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4rem;
+}
+
+.login-card {
     background: #0f1315;
     border-radius: 1rem;
     padding: 3rem;
@@ -67,100 +86,76 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-  }
+    gap: 1rem; /* Define o gap principal para o form */
+}
 
-  .login-box h2 {
+.login-card h2 {
     text-align: left;
     margin-bottom: 0.5rem;
-  }
+}
 
-  .login-box p {
+.login-card > p:first-of-type { /* Seleciona o parágrafo de instrução do login */
     margin-bottom: 1.5rem;
     text-align: left;
     color: #94a3b8;
-  }
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .forgot {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 14px;
-    color: #cfcfccfc;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .options {
+/* 4. Estilos de Opções e Componentes Internos */
+.options-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: #e2e8f0;
     margin-top: 0.5rem;
-  }
+    margin-bottom: 0.5rem; /* Adiciona margem inferior */
+}
 
-  /* Container do checkbox + texto */
-  .remember {
+.remember-me {
     display: flex;
     align-items: center;
-    gap: 0.4rem; /* ajuste fino */
-    line-height: 1; /* evita o texto “puxar” a linha pra baixo */
-  }
+    gap: 0.4rem;
+    line-height: 1;
+}
 
-  /* Estilizando checkbox moderno */
-  .remember input[type='checkbox'] {
+.remember-me input[type='checkbox'] {
     margin: 0;
     width: 16px;
     height: 16px;
-    accent-color: #00d134; /* Verde bonito */
+    accent-color: var(#00d134);
     cursor: pointer;
     transition: 0.2s;
-  }
+}
 
-  .remember input[type='checkbox']:hover {
-    transform: scale(1.1);
-  }
-
-  .options label {
+.remember-me label {
     cursor: pointer;
     color: #e2e8f0;
     transition: 0.2s;
-  }
+}
 
-  .options label:hover {
-    color: #00d134;
-  }
-
-  /* "Esqueceu a senha?" */
-  .options .forgot {
+.forgot-link {
     color: #00d134;
     text-decoration: none;
     transition: 0.2s;
-  }
+}
 
-  .options .forgot:hover {
+.forgot-link:hover, .remember-me label:hover {
     text-decoration: underline;
-  }
+    color: #00d134;
+}
 
-  .divider {
+.separator-text {
     text-align: center;
     color: #94a3b8;
-    margin: 1.2rem 0;
-  }
+    margin: 1.5rem 0; /* Mais espaçamento para clareza */
+}
 
-  .social-buttons {
+.social-login-buttons {
     display: flex;
     gap: 1rem;
-  }
+}
 
-  .btn-social {
+.btn-social {
     flex: 1;
     background: #111;
     border: 1px solid #1f2937;
@@ -169,13 +164,14 @@
     padding: 0.6rem;
     font-weight: 500;
     transition: all 0.2s ease;
-  }
+}
 
-  .btn-social:hover {
+.btn-social:hover {
     background: #1f2937;
-  }
+}
 
-  .error {
+/* Estilos de Erro (Mantidos, apenas com nome de classe aprimorado) */
+.alert-error {
     background: linear-gradient(135deg, rgba(255, 60, 60, 0.2), rgba(255, 0, 0, 0.1));
     border-left: 4px solid #ff4444;
     color: #ff4d4d;
@@ -186,31 +182,54 @@
     margin-top: 5px;
     box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
     animation: slideIn 0.35s ease-out;
-  }
+}
 
-  @keyframes slideIn {
+@keyframes slideIn {
     from {
-      opacity: 0;
-      transform: translateX(-10px);
+        opacity: 0;
+        transform: translateX(-10px);
     }
     to {
-      opacity: 1;
-      transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
-  }
+}
 
-  @media (max-width: 900px) {
-    .login-container {
-      flex-direction: column;
-      text-align: center;
+/* 5. Media Queries */
+@media (max-width: 900px) {
+    .login-layout {
+        flex-direction: column;
+        gap: 3rem;
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 2rem;
     }
-    .login-info {
-      padding: 2rem;
-      align-items: center;
+    .login-pitch {
+        padding: 0;
+        align-items: center;
+        text-align: center;
     }
-    .login-box {
-      width: 90%;
-      margin-top: 2rem;
+    .branding {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
-  }
+    .login-form-container {
+        padding: 0;
+    }
+    .login-card {
+        width: 100%;
+        max-width: 380px;
+        margin-top: 0;
+    }
+    .login-card h2, .login-card p:first-of-type {
+        text-align: center;
+    }
+    .features-list {
+        justify-content: center;
+        flex-wrap: wrap; /* Permite quebrar a linha se a tela for muito pequena */
+    }
+    .feature-item {
+        align-items: center;
+    }
 }

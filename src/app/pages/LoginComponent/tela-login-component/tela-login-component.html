@@ -1,65 +1,64 @@
-<div class="login-container">
-  <section class="login-info">
-    <div class="logo">
-      <img src="/img/logo-amazonas.jpg" alt="Finance Agenda Logo" />
-      <h1>Finance Agenda</h1>
-      <p>Gestão Financeira Inteligente</p>
-    </div>
+<main class="login-layout">
+    <section class="login-pitch">
+        <header class="branding">
+            <img src="/img/logo-amazonas.jpg" alt="Logo Finance Agenda" width="64" height="64" loading="eager" />
+            <h1 class="app-name">Finance Agenda</h1>
+            <p class="tagline">Gestão Financeira Inteligente</p>
+        </header>
 
-    <h2>Assuma o controle do seu futuro financeiro.</h2>
-    <p>
-      Acompanhe as despesas, monitore a receita e alcance seus objetivos financeiros com insights
-      poderosos e ferramentas intuitivas.
-    </p>
+        <h2 class="pitch-title">Assuma o controle do seu futuro financeiro.</h2>
+        <p class="pitch-description">
+            Acompanhe as despesas, monitore a receita e alcance seus objetivos financeiros com insights
+            poderosos e ferramentas intuitivas.
+        </p>
 
-    <div class="features">
-      <div class="feature">
-        <h3>100%</h3>
-        <p>Clareza Financeira</p>
-      </div>
-      <div class="feature">
-        <h3>Segurança</h3>
-        <p>Segurança em nível de banco</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="login-form">
-    <div class="login-box">
-      <h2>Bem vindo</h2>
-      <p>Faça login para continuar para o seu painel de controle.</p>
-
-      <form (ngSubmit)="onLogin()">
-        <app-forms
-          [title]="''"
-          [fields]="loginFields"
-          (dataChange)="updateFormData($event)"
-        ></app-forms>
-
-        <div class="options">
-          <div class="rememberMe">
-            <input type="checkbox" id="rememberMe">
-            <label for="rememberMe">Lembre de mim</label>
-          </div>
-
-          <a href="#" class="forgot">Esqueceu a senha?</a>
+        <div class="features-list" role="list">
+            <div class="feature-item" role="listitem">
+                <h3>100%</h3>
+                <p>Clareza Financeira</p>
+            </div>
+            <div class="feature-item" role="listitem">
+                <h3>Segurança</h3>
+                <p>Segurança em nível de banco</p>
+            </div>
         </div>
+    </section>
 
-        <app-button label="Login" class="btn-login"></app-button>
-        <app-button
-          label="Cadastra-se"
-          [routerLink]="['/cadastro']"
-          routerLinkActive="router-link-active"
-        ></app-button>
+    <form class="login-form-container" (ngSubmit)="onLogin()" aria-labelledby="login-heading">
+        <div class="login-card">
+            <h2 id="login-heading">Bem-vindo</h2>
+            <p>Faça login para continuar para o seu painel de controle.</p>
 
-        <div class="divider">Ou continue assim</div>
-        <div class="social-buttons">
-          <button class="btn-social google">Google</button>
-          <button class="btn-social github">GitHub</button>
+            <app-forms
+                [title]="''"
+                [fields]="loginFields"
+                (dataChange)="updateFormData($event)"
+            ></app-forms>
+
+            <div class="options-row">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberUser" name="rememberUser">
+                    <label for="rememberUser">Lembre de mim</label>
+                </div>
+
+                <a href="/forgot-password" class="forgot-link">Esqueceu a senha?</a>
+            </div>
+
+            <app-button label="Login" type="submit" class="btn-primary"></app-button>
+            <app-button
+                label="Cadastra-se"
+                type="button"
+                [routerLink]="['/cadastro']"
+                class="btn-secondary"
+            ></app-button>
+
+            <div class="separator-text">Ou continue assim</div>
+            <div class="social-login-buttons">
+                <button type="button" class="btn-social google">Google</button>
+                <button type="button" class="btn-social github">GitHub</button>
+            </div>
+
+            <div *ngIf="message" role="alert" aria-live="assertive" class="alert-error">⚠️{{ message }}</div>
         </div>
-
-        <div *ngIf="message" class="error">⚠️{{ message }}</div>
-      </form>
-    </div>
-  </section>
-</div>
+    </form>
+</main>

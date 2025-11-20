@@ -1,41 +1,36 @@
 <main class="cadastro-container">
-  <section class="cadastro-info">
-    <h1>Finance <span>Agenda</span></h1>
-    <p>Controle suas finanças com inteligência</p>
+    <section class="cadastro-info">
+        <h1>Finance <span>Agenda</span></h1>
+        <p>Controle suas finanças com inteligência</p>
 
-    <div class="benefits">
-      
-      <h2>Comece a organizar suas finanças hoje</h2>
-      <ul>
-        <li>✅ Registre receitas e despesas facilmente</li>
-        <li>✅ Visualize seu fluxo de caixa em gráficos</li>
-        <li>✅ Gerencie pagamentos recorrentes</li>
-      </ul>
-    </div>
-  </section>
+        <aside class="benefits">
+            <h2>Comece a organizar suas finanças hoje</h2>
+            <ul>
+                <li>✅ Registre receitas e despesas facilmente</li>
+                <li>✅ Visualize seu fluxo de caixa em gráficos</li>
+                <li>✅ Gerencie pagamentos recorrentes</li>
+            </ul>
+        </aside>
+    </section>
 
-  <section class="cadastro-form-section">
-    <form method="POST" class="cadastro-form" (ngSubmit)="onCadastro()">
-      <h1>Cadastre-se</h1>
-      <p>Digite os seus dados de acesso no campo abaixo.</p>
+    <form class="cadastro-form-wrapper" (ngSubmit)="onCadastro()">
+        <div class="cadastro-card">
+            <h2>Cadastre-se</h2>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
 
-      <app-forms
-        [title]="''"
-        [fields]="cadastroFields"
-        (dataChange)="updateFormData($event)"
-      ></app-forms>
+            <app-forms
+                [title]="''"
+                [fields]="cadastroFields"
+                (dataChange)="updateFormData($event)"
+            ></app-forms>
 
-      <form #cadastro="ngForm" class="cadastro" (ngSubmit)="onCadastro()">
-        <app-button label="Cadastrar"></app-button>
+            <app-button label="Cadastrar" type="submit" class="btn-primary"></app-button>
 
-        <div *ngIf="message" class="error">{{ message }}</div>
-
-        <div class="retorno-container">
-          <a href="/login" class="retorno">Volte ao inicio</a> 
+            <div class="account-prompt">
+                <p>Já tem uma conta? <a [routerLink]="['/login']">Fazer login</a></p>
+            </div>
+            
+            <div *ngIf="message" class="error">⚠️ {{ message }}</div>
         </div>
-
-        <div *ngIf="message" class="error">⚠️{{ message }}</div>
-      </form>
     </form>
-  </section>
 </main>
