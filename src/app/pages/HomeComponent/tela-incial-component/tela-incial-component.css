@@ -6,6 +6,7 @@
   /* Linhas: 60px para cabeçalho, 1fr para o resto */
   grid-template-rows: 60px 1fr;
   height: 100vh;
+  background-color: #19191b;
 }
 
 

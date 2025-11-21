@@ -1,43 +1,95 @@
-
-.box-perfil {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.box-perfil input {
-  width: 400px;
-  padding: 10px 40px 10px 15px;
-  border-radius: 8px;
-  border: 2px solid #00ca8e;
-  background-color: transparent;
-  color: #000000;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.box-perfil input:focus {
-  box-shadow: 0 0 10px #00e0c6;
-  border-color: #00e0c6;
-}
-
-
-.box-perfil i {
-  position: absolute;
-  right: 15px;
-  color: #00e0c6;
-  font-size: 18px;
-  pointer-events: none;
-}
-
 .header-container {
     width: 100%;
-    padding: 20px 0 10px 0;
-    background-color: #0e1111;
+    padding: 10px 0px; 
+    background-color: #0e1111; 
     display: flex;
-    justify-content: flex-start; 
+    justify-content: space-between; 
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.search-box {
+    position: relative;
+    flex-grow: 1; 
+    max-width: 500px;
+    padding: 0px 10px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1e2124;
+    color: #a0a0a0; /* Cor do texto (placeholder e digitado) */
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 13px; 
+    top: 53%;
+    transform: translateY(-50%);
+    color: #a0a0a0;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre Notificação e Perfil */
+}
+
+/* 4. Ícone de Notificação (Incluindo o pontinho verde) */
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 30px;
+    color: #b3aeae;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0px; 
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: #00ca8e; /* Cor do pontinho verde */
+    border-radius: 50%;
+    z-index: 10; 
+}
+
+@media (max-width: 768px) {
+    
+    .header-container {
+        flex-wrap: wrap; 
+        justify-content: center; 
+        padding: 10px; 
+    }
+
+    .search-box {
+        width: 100%; 
+        max-width: 100%; 
+        margin-bottom: 10px; 
+        flex-grow: initial; 
+    }
+
+    .search-box input {
+        padding: 10px 15px 10px 40px;
+        font-size: 14px;
+    }
+
+    .user-actions {    
+        width: 100%; 
+        justify-content: flex-end; 
+        gap: 15px;
+    }
+
+    .avatar {
+        width: 34px; 
+        height: 34px;
+        font-size: 13px; 
+    }
+}

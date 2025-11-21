@@ -1,12 +1,17 @@
 <header class="header-container">
-  <div class="box-perfil">
-    <nav>
-      <input type="text" placeholder="BARRA DE PESQUISAR" />
-      <i class="lupa"></i>
-    </nav>
+  <div class="search-box">
+    <input type="text" placeholder="Search transactions, goals..." />
+    <mat-icon class="search-icon fas fa-search">search</mat-icon>
   </div>
 
-  <div class="perfil">
-    <app-perfil></app-perfil>
+  <div class="user-actions">
+    <div class="notification-icon">
+      <mat-icon class="fas fa-bell">notifications</mat-icon>
+      <span class="notification-dot"></span>
+    </div>
+
+    <div class="perfil">
+      <app-perfil></app-perfil>
+    </div>
   </div>
 </header>
