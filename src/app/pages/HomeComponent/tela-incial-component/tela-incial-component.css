@@ -1,0 +1,37 @@
+
+.container-principal {
+  display: grid;
+  /* Colunas: 250px para menu lateral, 1fr para conteúdo */
+  grid-template-columns: 250px 1fr;
+  /* Linhas: 60px para cabeçalho, 1fr para o resto */
+  grid-template-rows: 60px 1fr;
+  height: 100vh;
+}
+
+
+.cabecalho-superior {
+  /* Fica APENAS na segunda coluna (o espaço à direita do Menu Lateral) */
+  grid-column: 2 / 3; 
+  /* Fica na primeira linha */
+  grid-row: 1 / 2;
+  /* Adicione seus estilos de cor, padding, etc. */
+}
+
+.cabecalho-superior app-cabecalho {
+    margin-bottom: 0;
+}
+
+
+.area-conteudo-principal {
+  grid-column: 2 / 3; 
+  grid-row: 2 / 3; 
+  padding-top: 0; /* Remove o espaço no topo */
+  /* Mantenha o padding para os outros lados se necessário */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.area-conteudo-principal app-grafico {
+    margin-top: 0;
+}
