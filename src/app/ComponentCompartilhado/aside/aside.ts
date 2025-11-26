@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { ModalAdicionarDados } from '../../HomeComponent/modal-adicionar-dados/modal-adicionar-dados';
+import { ModalAdicionarDados } from '../../pages/HomeComponent/modal-adicionar-dados/modal-adicionar-dados';
+
 
 @Component({
   selector: 'app-aside',

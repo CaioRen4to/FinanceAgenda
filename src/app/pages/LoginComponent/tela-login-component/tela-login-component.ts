@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-<<<<<<< HEAD
-import { Button } from '../../ComponentCompartilhado/button/button';
-=======
 import { Button } from '../../../ComponentCompartilhado/button/button';
 import { Forms } from '../../../ComponentCompartilhado/forms/forms';
->>>>>>> origin
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Forms } from '../../ComponentCompartilhado/forms/forms';
+
 
 @Component({
   selector: 'app-tela-login-component',
