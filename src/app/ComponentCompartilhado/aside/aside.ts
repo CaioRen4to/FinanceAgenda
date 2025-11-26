@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { ModalAdicionarDados } from '../../pages/HomeComponent/modal-adicionar-dados/modal-adicionar-dados';
-import { Grafico } from '../grafico/grafico';
 
 @Component({
   selector: 'app-aside',
@@ -13,28 +12,20 @@ import { Grafico } from '../grafico/grafico';
 })
 export class Aside {
 
-
-  carregarDadosDaHome() {
-  const dadosSalvos = localStorage.getItem('dadosFinanceiros');
-}
+  @Output() dadosSalvos = new EventEmitter<void>();
 
   mostrarModal: boolean = false;
-  
-  abrirModal(): void {
+
+  abrirModal() {
     this.mostrarModal = true;
   }
 
-  fecharModal(): void {
+  fecharModal() {
     this.mostrarModal = false;
   }
 
-
   onDadosSalvos() {
-  this.dadosSalvos.emit();  // avisa a home
-  this.fecharModal();
-}
-
-
-  @Output() dadosSalvos = new EventEmitter<void>();
-  
+    this.dadosSalvos.emit();
+    this.fecharModal();
+  }
 }
