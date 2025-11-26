@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { Forms } from '../../ComponentCompartilhado/forms/forms';
 import { Button } from '../../ComponentCompartilhado/button/button';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Forms } from '../../ComponentCompartilhado/forms/forms';
 
 @Component({
   selector: 'app-tela-login-component',
@@ -36,7 +36,6 @@ public: any;
 
   constructor(private router: Router) {}
 
-  // Atualiza os dados do formulário
   updateFormData(data: any) {
     this.formData = data;
     console.log('Dados atualizados:', this.formData);
@@ -62,7 +61,7 @@ public: any;
   this.message = "Login realizado!";
 
   setTimeout(() => {
-     this.router.navigate(['/form']);
+     this.router.navigate(['/home']);
   }, 1000);
 }
 }

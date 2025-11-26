@@ -3,11 +3,11 @@
     <a href="/home" class="app-logo">
       <img src="img/logo512x512.png" alt="logo" class="logo-image" />
     </a>
-
-    <div class="app-titles">
-      <span class="app-name">Finance Agenda</span>
-      <span class="app-tagline">Financial Control</span>
-    </div>
+      <div class="app-titles">
+        <span class="app-name">Finance Agenda</span>
+        <span class="app-tagline">Financial Control</span>
+      </div>
+    
   </header>
 
   <ul class="nav-list">
@@ -18,33 +18,39 @@
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/home" class="nav-link">
         <span class="icon"><mat-icon>done</mat-icon></span>
         Metas
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/home" class="nav-link">
         <span class="icon"><mat-icon>article</mat-icon></span>
         Declaração
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/home" class="nav-link">
         <span class="icon"><mat-icon>payment</mat-icon></span>
         Cartões
       </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="/home" class="nav-link">
         <span class="icon"><mat-icon>timeline</mat-icon></span>
         Relatórios
       </a>
     </li>
   </ul>
 
-  <a href="#" class="btn-add-schedule">
-    <span class="icon-plus">+</span>
-    Adicionar Agendamento
-  </a>
+  <div class="header-actions">
+    <button class="btn-adicionar" (click)="abrirModal()"><span>+</span> Adicionar Dados</button>
+  </div>
+
+  <app-modal-adicionar-dados
+    *ngIf="mostrarModal"
+    (closeModal)="fecharModal()"
+    (dadosSalvos)="onDadosSalvos()"
+  >
+  </app-modal-adicionar-dados>
 </nav>

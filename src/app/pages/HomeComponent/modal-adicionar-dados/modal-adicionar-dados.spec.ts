@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RodapeComponent } from './rodape-component';
+import { ModalAdicionarDados } from './modal-adicionar-dados';
 
-describe('RodapeComponent', () => {
-  let component: RodapeComponent;
-  let fixture: ComponentFixture<RodapeComponent>;
+describe('ModalAdicionarDados', () => {
+  let component: ModalAdicionarDados;
+  let fixture: ComponentFixture<ModalAdicionarDados>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RodapeComponent]
+      imports: [ModalAdicionarDados]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RodapeComponent);
+    fixture = TestBed.createComponent(ModalAdicionarDados);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +21,4 @@ describe('RodapeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

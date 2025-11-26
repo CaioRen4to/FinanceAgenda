@@ -1,0 +1,27 @@
+<div class="modal-overlay" (click)="fecharModalClickOverlay($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Adicionar Dados Financeiros</h2>
+      <button class="close-button" (click)="fecharModal()" aria-label="Fechar modal">&times;</button>
+    </div>
+    
+    <div class="modal-body">
+      <form method="POST" (ngSubmit)="SalvarDados()" class="Captura_dados">
+        <app-forms
+          [title]="''"
+          [fields]="$any(dadosFields)"
+          (dataChange)="updateFormData($event)"
+        ></app-forms>
+        
+        <div class="button-container">
+          <app-button label="Salvar"></app-button>
+        </div>
+
+        <div *ngIf="message" [class]="message.includes('sucesso') ? 'success' : 'error'">
+          {{ message }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
