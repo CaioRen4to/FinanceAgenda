@@ -1,38 +1,184 @@
-
+main {
+  display: flex;
+  gap: 10px; /* Espaço entre o gráfico e o sumário */
+  align-items: flex-start; /* Alinha os blocos no topo */
+  overflow-x: auto; /* Adiciona barra de rolagem se os blocos não couberem */
+}
 .container-principal {
   display: grid;
-  /* Colunas: 250px para menu lateral, 1fr para conteúdo */
-  grid-template-columns: 250px 1fr;
-  /* Linhas: 60px para cabeçalho, 1fr para o resto */
-  grid-template-rows: 60px 1fr;
+  gap: 10px;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 70px 1fr;
   height: 100vh;
   background-color: #19191b;
+  margin: 0;
 }
 
-
 .cabecalho-superior {
-  /* Fica APENAS na segunda coluna (o espaço à direita do Menu Lateral) */
-  grid-column: 2 / 3; 
-  /* Fica na primeira linha */
+  grid-column: 2 / 3;
   grid-row: 1 / 2;
-  /* Adicione seus estilos de cor, padding, etc. */
 }
 
 .cabecalho-superior app-cabecalho {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-
 .area-conteudo-principal {
-  grid-column: 2 / 3; 
-  grid-row: 2 / 3; 
-  padding-top: 0; /* Remove o espaço no topo */
-  /* Mantenha o padding para os outros lados se necessário */
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding-top: 0;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.area-conteudo-principal app-grafico {
-    margin-top: 0;
+.container-grafico {
+  flex-grow: 1;
+  min-width: 400px;
+
+}
+
+.summary {
+  background-color: #333;
+  color: rgb(250, 250, 250);
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px; /* Largura fixa (como na imagem) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0; /* IMPEDE que este card encolha */
+}
+
+.summary-titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #fff;
+  margin: 20px 0;
+}
+
+.total-balance {
+  margin-bottom: 20px;
+}
+
+.total-balance .label {
+  font-size: 0.9em;
+  color: #a0a0a0;
+  display: inline-block;
+}
+
+.total-balance .quantia {
+  font-size: 1.8em;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.total-balance .simbolo {
+  font-size: 0.7em;
+  vertical-align: top;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.metrica-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metrica-rendas,
+.metrica-despesas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.icon-metrica {
+  font-size: 1.5em;
+  margin-right: 15px;
+  padding: 5px;
+  border-radius: 30%;
+  background-color: #2a2a2a;
+}
+
+.income-icon {
+  color: #48bb78;
+}
+.expenses-icon {
+  color: #e53e3e;
+}
+
+.detalhe-metrica {
+  flex-grow: 1;
+}
+
+.metrica-label {
+  font-size: 0.9em;
+  color: #a0a0a0;
+}
+
+.metrica-valor {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.valor-renda {
+  color: #48bb78;
+}
+.valor-despesas {
+  color: #e53e3e;
+}
+
+.media-porcentagem {
+  font-size: 0.9em;
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.income-change {
+  color: #48bb78;
+}
+.expenses-change {
+  color: #e53e3e;
+}
+
+.saving-rate {
+  margin-top: 20px;
+}
+
+.save-label {
+  font-size: 1em;
+  color: #f0f0f0;
+  display: inline-block;
+}
+
+.save-porcentagem {
+  float: right;
+  font-weight: bold;
+  color: #48bb78;
+}
+
+.barra-progresso {
+  height: 8px;
+  background-color: #333; /* Fundo da barra */
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.preenchimento-progresso {
+  height: 100%;
+  background-color: #48bb78;
 }
