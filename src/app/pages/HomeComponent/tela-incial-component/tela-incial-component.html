@@ -1,5 +1,4 @@
 <div class="container-principal">
-  
   <header class="cabecalho-superior">
     <app-cabecalho-component></app-cabecalho-component>
   </header>
@@ -7,9 +6,50 @@
   <main class="area-conteudo-principal">
     <div class="conteudo-interno">
       <app-aside></app-aside>
-      <app-grafico></app-grafico>
+      <app-grafico class="container-grafico"></app-grafico>
+    </div>
+
+
+    <div class="summary">
+      <h2 class="summary-titulo">Sumário Financeiro</h2>
+      <div class="total-balance">
+        <span class="simbolo">&dollar; </span>
+        <span class="label">Balanceamento total</span>
+        <span class="quantia">&dollar; 40,000.00</span>
+      </div>
+
+      <hr>
+
+      <div class="metrica-container">
+        <div class="metrica-rendas">
+           <mat-icon class="icon-metrica">trending_up</mat-icon><div class="detalhe-metrica">
+            <div class="metrica-label">Total Income</div>
+            <div class="metrica-valor valor-renda">30,800.00</div>
+          </div>
+          <div class="media-porcentagem">+15%</div>
+        </div>
+
+        <div class="metrica-despesas">
+          <mat-icon class="icon-metrica">trending_down</mat-icon> <div class="detalhe-metrica">
+            <div class="metrica-label">Total Expenses</div>
+            <div class="metrica-valor valor-despesas">25.000.00</div>
+          </div>
+          <div class="media-porcentagem">-8%</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="saving-rate">
+        <div class="save-label"></div>
+        <div class="save-porcentagem">
+          <span id="rate-value">77</span>%
+        </div>
+
+        <div class="barra-progresso">
+          <div class="preenchimento-progresso" id="preenchimento-progresso" style="width: 66%;"></div>
+        </div>
+      </div>
     </div>
   </main>
-
-  
 </div>
