@@ -95,15 +95,16 @@ export class ModalAdicionarDados {
       this.message = 'Dados adicionados com sucesso!';
 
       // Emitir evento para atualizar a tela e fechar o modal
-      setTimeout(() => {
-        this.dadosSalvos.emit();
-        this.fecharModal();
-      }, 1000);
+      this.dadosSalvos.emit();
+      this.fecharModal();
+     
 
     } catch (error) {
       console.error(error);
       this.message = 'Erro ao salvar dados.';
     }
+
+    
   }
 
   fecharModal(): void {

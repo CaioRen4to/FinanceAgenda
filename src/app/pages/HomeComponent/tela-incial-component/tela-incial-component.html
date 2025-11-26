@@ -9,7 +9,6 @@
       <app-grafico class="container-grafico"></app-grafico>
     </div>
 
-
     <div class="summary">
       <h2 class="summary-titulo">Sumário Financeiro</h2>
       <div class="total-balance">
@@ -18,11 +17,12 @@
         <span class="quantia">&dollar; 40,000.00</span>
       </div>
 
-      <hr>
+      <hr />
 
       <div class="metrica-container">
         <div class="metrica-rendas">
-           <mat-icon class="icon-metrica">trending_up</mat-icon><div class="detalhe-metrica">
+          <mat-icon class="icon-metrica">trending_up</mat-icon>
+          <div class="detalhe-metrica">
             <div class="metrica-label">Total Income</div>
             <div class="metrica-valor valor-renda">30,800.00</div>
           </div>
@@ -30,7 +30,8 @@
         </div>
 
         <div class="metrica-despesas">
-          <mat-icon class="icon-metrica">trending_down</mat-icon> <div class="detalhe-metrica">
+          <mat-icon class="icon-metrica">trending_down</mat-icon>
+          <div class="detalhe-metrica">
             <div class="metrica-label">Total Expenses</div>
             <div class="metrica-valor valor-despesas">25.000.00</div>
           </div>
@@ -38,18 +39,28 @@
         </div>
       </div>
 
-      <hr>
+      <hr />
 
       <div class="saving-rate">
         <div class="save-label"></div>
-        <div class="save-porcentagem">
-          <span id="rate-value">77</span>%
-        </div>
+        <div class="save-porcentagem"><span id="rate-value">77</span>%</div>
 
         <div class="barra-progresso">
-          <div class="preenchimento-progresso" id="preenchimento-progresso" style="width: 66%;"></div>
+          <div
+            class="preenchimento-progresso"
+            id="preenchimento-progresso"
+            style="width: 66%"
+          ></div>
         </div>
       </div>
+
+      <app-aside (dadosSalvos)="atualizarGrafico()"></app-aside>
+
+      <app-grafico #grafico></app-grafico>
+    </div>
+
+    <div class="transacoes">
+      <app-user-card-component></app-user-card-component>
     </div>
   </main>
 </div>

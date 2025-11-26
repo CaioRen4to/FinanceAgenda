@@ -46,10 +46,12 @@
     <button class="btn-adicionar" (click)="abrirModal()"><span>+</span> Adicionar Dados</button>
   </div>
 
-  <app-modal-adicionar-dados
-    *ngIf="mostrarModal"
-    (closeModal)="fecharModal()"
-    (dadosSalvos)="onDadosSalvos()"
-  >
-  </app-modal-adicionar-dados>
+<app-modal-adicionar-dados
+
+  *ngIf="mostrarModal"
+  (closeModal)="fecharModal()"
+  (dadosSalvos)="onDadosSalvos()"
+>
+</app-modal-adicionar-dados>
+
 </nav>
