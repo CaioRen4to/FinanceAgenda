@@ -6,9 +6,17 @@
 
   <main class="area-conteudo-principal">
     <div class="conteudo-interno">
-      <app-aside></app-aside>
-      <app-grafico></app-grafico>
+      
+      <app-aside (dadosSalvos)="atualizarGrafico()"></app-aside>
+
+      <app-grafico #grafico></app-grafico>
+
     </div>
+
+    <div class="transacoes">
+      <app-user-card-component></app-user-card-component>
+    </div>
+
   </main>
 
   

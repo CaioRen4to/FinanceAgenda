@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
@@ -14,6 +14,8 @@ interface CategoriaFinanceira {
   styleUrls: ['./grafico.css']
 })
 export class Grafico implements AfterViewInit {
+
+  @Output() dados = new EventEmitter<void>();
 
   @ViewChild('graficoCanvas') graficoCanvas!: ElementRef<HTMLCanvasElement>;
 
@@ -38,6 +40,8 @@ export class Grafico implements AfterViewInit {
       this.proventos = dados.proventos || [];
       this.despesas = dados.despesas || [];
     }
+
+
 
     this.criarGrafico();
   }

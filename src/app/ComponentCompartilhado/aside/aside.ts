@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { ModalAdicionarDados } from '../../pages/HomeComponent/modal-adicionar-dados/modal-adicionar-dados';
-
+import { Grafico } from '../grafico/grafico';
 
 @Component({
   selector: 'app-aside',
@@ -12,6 +12,12 @@ import { ModalAdicionarDados } from '../../pages/HomeComponent/modal-adicionar-d
   styleUrl: './aside.css'
 })
 export class Aside {
+
+
+  carregarDadosDaHome() {
+  const dadosSalvos = localStorage.getItem('dadosFinanceiros');
+}
+
   mostrarModal: boolean = false;
   
   abrirModal(): void {
@@ -22,9 +28,13 @@ export class Aside {
     this.mostrarModal = false;
   }
 
-  onDadosSalvos(): void {
-    // Os componentes filhos (grafico, aside) devem ler do localStorage automaticamente
-    // Se necessário, pode-se implementar um serviço para notificar atualizações
-    // Por enquanto, os dados são salvos no localStorage e os componentes podem recarregar quando necessário
-  }
+
+  onDadosSalvos() {
+  this.dadosSalvos.emit();  // avisa a home
+  this.fecharModal();
+}
+
+
+  @Output() dadosSalvos = new EventEmitter<void>();
+  
 }
