@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Forms } from "../../ComponentCompartilhado/forms/forms";
-import { Button } from "../../ComponentCompartilhado/button/button";
+import { Forms } from '../../../ComponentCompartilhado/forms/forms';
+import { Button } from '../../../ComponentCompartilhado/button/button';
+
 
 @Component({
   selector: 'app-modal-adicionar-dados',
