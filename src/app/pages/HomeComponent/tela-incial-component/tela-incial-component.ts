@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CabecalhoComponent } from '../cabecalho-component/cabecalho-component';
-import { Grafico } from "../../ComponentCompartilhado/grafico/grafico";
+import { Grafico } from '../../../ComponentCompartilhado/grafico/grafico';
 import { CommonModule } from '@angular/common';
 import { MenuLateralComponent } from '../menu-lateral-component/menu-lateral-component';
-import { Aside } from "../../ComponentCompartilhado/aside/aside";
+import { Aside } from '../../../ComponentCompartilhado/aside/aside';
 
 
 @Component({

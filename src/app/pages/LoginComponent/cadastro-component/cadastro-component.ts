@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Button } from "../../ComponentCompartilhado/button/button";
-import { Forms } from "../../ComponentCompartilhado/forms/forms";
+import { Button } from '../../../ComponentCompartilhado/button/button';
+import { Forms } from '../../../ComponentCompartilhado/forms/forms';
 
 
 @Component({

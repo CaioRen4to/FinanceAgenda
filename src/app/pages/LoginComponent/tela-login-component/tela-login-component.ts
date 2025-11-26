@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { Forms } from '../../ComponentCompartilhado/forms/forms';
-import { Button } from '../../ComponentCompartilhado/button/button';
+import { Button } from '../../../ComponentCompartilhado/button/button';
+import { Forms } from '../../../ComponentCompartilhado/forms/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
