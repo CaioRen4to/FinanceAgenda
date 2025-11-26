@@ -1,4 +1,4 @@
-.grafico-container-full {
+.area-grafico {
   position: relative;
   width: 90%; /* Ajuste a largura conforme necessário */
   max-width: 700px; /* Largura máxima para um layout maior */
@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-.grafico-container-full canvas {
+.area-grafico canvas {
   width: 100% !important;
   height: 100% !important;
 }
