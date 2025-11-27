@@ -17,10 +17,10 @@ export class CadastroComponent {
   formData: any = {};
 
   cadastroFields = [
-    { name: 'nome', type: 'text', placeholder: 'Digite seu nome', label: 'Nome' },
-    { name: 'email', type: 'text', placeholder: 'Digite seu e-mail', label: 'E-mail' },
-    { name: 'password', type: 'text', placeholder: 'Digite sua senha', label: 'Senha' },
-    { name: 'Conpassword', type: 'text', placeholder: 'Confime a senha', label: 'Confirmar Senha'},
+    { name: 'nome', type: 'text', placeholder: 'Digite seu nome', label: 'Usuário' },
+    { name: 'email', type: 'email', placeholder: 'Digite seu e-mail', label: 'E-mail' },
+    { name: 'password', type: 'password', placeholder: 'Digite sua senha', label: 'Senha' },
+    { name: 'Conpassword', type: 'password', placeholder: 'Confime a senha', label: 'Confirmar Senha'},
     { name: 'data', type: 'date', placeholder: 'Dia do nascimento', label: 'Data de Aniversario' }
   ];
 
