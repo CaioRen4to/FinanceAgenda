@@ -37,9 +37,12 @@ export class Grafico implements AfterViewInit {
     this.criarGrafico();
   }
 
+
+  // Criação do grafico 
   private criarGrafico(): void {
     const canvas = this.graficoCanvas.nativeElement;
-    Chart.getChart(canvas)?.destroy();
+
+    Chart.getChart(canvas)?.destroy(); // Toda implementação de Dados cria um grafico novo
 
     new Chart(canvas.getContext('2d')!, {
       type: 'bar',
@@ -50,6 +53,7 @@ export class Grafico implements AfterViewInit {
           ...this.gerarBarras(this.despesas, 'despesas')
         ]
       },
+      
       options: {
         responsive: true,
         maintainAspectRatio: false,
