@@ -18,7 +18,7 @@
     gap: 0.75rem; 
     padding: 1.5rem 1.5rem 1.5rem 1.5rem; 
     margin-bottom: 0.5rem; 
-    border: solid 1px #7e7e7e;
+    border: solid 1px #313030;
     border-radius: 1px;
 }
 
@@ -40,11 +40,6 @@
     border-radius: 8px;
 }
 
-.app-logo .icon-chart {
-    font-size: 1.2rem;
-    color: #14181f;
-}
-
 .app-titles {
     display: flex;
     flex-direction: column;
@@ -57,7 +52,7 @@
     color: #fff; 
 }
 
-.app-tagline {
+.app-tag {
     font-size: 0.75rem;
     font-weight: 400;
     color: #fff; 
@@ -107,30 +102,41 @@
     text-align: center;
 }
 
-.btn-add-schedule {
-    
-    margin: 0 1.5rem 2rem 1.5rem; 
-    padding: 0.8rem 1rem;
+.header-actions {
+    margin: 1.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.btn-adicionar {
     background: linear-gradient(90deg, #16c79a, #00ffc8);
-    border-radius: 8px;
     color: #000;
-    text-decoration: none;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
     font-weight: 600;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'inter', sans-serif;
+    width: 100%;
     box-shadow: 0 4px 10px rgba(0, 255, 200, 0.3);
 }
 
-.btn-add-schedule:hover {
+.btn-adicionar:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 255, 200, 0.4);
 }
 
-.btn-add-schedule .icon-plus {
+.btn-adicionar:active {
+    transform: translateY(0);
+}
+
+.btn-adicionar span {
     font-size: 1.2rem;
     font-weight: 900;
 }

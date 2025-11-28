@@ -21,15 +21,15 @@
             <app-forms
                 [title]="''"
                 [fields]="cadastroFields"
-                (dataChange)="updateFormData($event)"
-            ></app-forms>
+                (dataChange)="updateFormData($event)">
+            </app-forms>
 
             <app-button label="Cadastrar" type="submit" class="btn-primary"></app-button>
 
             <div class="account-prompt">
                 <p>Já tem uma conta? <a [routerLink]="['/login']">Fazer login</a></p>
             </div>
-            
+
             <div *ngIf="message" class="error">⚠️ {{ message }}</div>
         </div>
     </form>

@@ -1,6 +1,6 @@
-.grafico-container-full {
+.area-grafico {
   position: relative;
-  width: 90%; /* Ajuste a largura conforme necessário */
+  width: 100%; /* Ajuste a largura conforme necessário */
   max-width: 700px; /* Largura máxima para um layout maior */
   height: 350px; /* Altura do gráfico */
   margin: 20px auto; /* Centraliza o gráfico e adiciona margem */
@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-.grafico-container-full canvas {
+.area-grafico canvas {
   width: 100% !important;
   height: 100% !important;
 }
