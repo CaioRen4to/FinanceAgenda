@@ -1,55 +1,75 @@
 body {
-    margin: auto;
-    background-color: #333;
-    border-radius: 12px;
-
+  display: block;
+  background-color: #333;
 }
 
 .container {
-    flex-direction: column;
-    color: aliceblue;
-    height: 420px;
-    width: 800px;
-    margin: 15px auto;
+  flex-direction: column;
+  color: aliceblue;
+  width: 100%;
+  margin: 0;
+  margin-top: 60px;
+  display: flex;
+  justify-content: flex-start;
+  background: transparent;
 }
 
 .titulo {
-    margin: 10px ;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 .historico {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin-top: 0;
+  max-height: 500px;
+  overflow-y: auto;
+  list-style: none;
 }
 
-.nav-finance, .nav-finance-gasto {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    background: rgba(34, 34, 34, 0.719);
-    border-radius: 8px;
-    padding: 10px 15px;
-    width: 95%;
-    font-family: sans-serif;
+.nav-finance,
+.nav-finance-gasto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(34, 34, 34, 0.719);
+  border-radius: 8px;
+  padding: 10px 15px;
+  width: 90%;
+  font-family: sans-serif;
 }
 
 .nav-finance span:first-child {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .nav-finance-gasto span:first-child {
-    font-weight: 600;
+  font-weight: 600;
 }
 
-
 .nav-finance span.valor {
-    color: #00c964; 
-    font-weight: 600;
+  color: #00c964;
+  font-weight: 600;
 }
 
 .nav-finance-gasto span.valor {
-    color: #da3e3e; 
-    font-weight: 600;
+  color: #da3e3e;
+  font-weight: 600;
+}
+
+.titulo h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #fff;
+  margin: 20px 0;
 }

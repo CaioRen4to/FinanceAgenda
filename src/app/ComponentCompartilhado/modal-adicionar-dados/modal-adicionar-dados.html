@@ -9,6 +9,7 @@
       <form method="POST" (ngSubmit)="SalvarDados()" class="Captura_dados">
         
         <app-forms
+          [title]="''"
           [fields]="$any(dadosFields)"
           (dataChange)="updateFormData($event)"
         ></app-forms>
@@ -20,7 +21,6 @@
         <div *ngIf="message" [class]="message.includes('sucesso') ? 'success' : 'error'">
           {{ message }}
         </div>
-        
       </form>
     </div>
   </div>

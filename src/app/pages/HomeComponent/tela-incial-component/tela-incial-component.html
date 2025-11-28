@@ -5,15 +5,9 @@
 
   <main class="area-conteudo-principal">
     <div class="conteudo-interno">
-
+      <h2 class="boas-vindas">Bem-vindo de volta, {{nomeCliente}}!</h2>
       <app-aside (dadosSalvos)="atualizarGrafico()"></app-aside>
-
       <app-grafico #grafico></app-grafico>
-
-      <div class="transacoes">
-        <app-user-card-component></app-user-card-component>
-     </div>
-     
     </div>
 
     <div class="summary">
@@ -61,7 +55,7 @@
         </div>
       </div>
 
+      <app-user-card-component></app-user-card-component>
     </div>
-    
   </main>
 </div>

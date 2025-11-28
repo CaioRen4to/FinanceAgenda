@@ -14,6 +14,11 @@ main {
   margin: 0;
 }
 
+.conteudo-interno h2{
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 .cabecalho-superior {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -181,4 +186,8 @@ hr {
 .preenchimento-progresso {
   height: 100%;
   background-color: #48bb78;
+}
+.boas-vindas {
+  margin-bottom: 20px;
+  color: #fff;
 }

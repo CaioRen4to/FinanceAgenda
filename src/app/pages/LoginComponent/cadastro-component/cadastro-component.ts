@@ -5,6 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { Button } from '../../../ComponentCompartilhado/button/button';
 import { Forms } from '../../../ComponentCompartilhado/forms/forms';
 
+
+export type CampoCadastro = {
+  name: string,
+  type: string | number,
+  placeholder: string,
+  label: string,
+}[]
+
 @Component({
   selector: 'app-cadastro-component',
   imports: [FormsModule, CommonModule, Button, Forms, RouterModule],
@@ -27,7 +35,7 @@ export class CadastroComponent {
   constructor(private router: Router) {}
 
   // Atualizar os dados
-  updateFormData(dados: any) {
+  updateFormData(dados: CampoCadastro) {
     this.formData = dados;
     console.log('Dados atualizados:');
   }

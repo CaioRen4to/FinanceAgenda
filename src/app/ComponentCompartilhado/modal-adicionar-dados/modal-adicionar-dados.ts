@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Forms } from '../../../ComponentCompartilhado/forms/forms';
-import { Button } from '../../../ComponentCompartilhado/button/button';
+import { Forms } from '../forms/forms';
+import { Button } from '../button/button';
 
-export type CampoFormulario = {                                                                                                       //define o formato                                                                                                                          
-  name: string, 
-  type: 'text' | 'number' | 'date' | 'email',
-  placeholder: string, 
-  label: string 
-}
+export type CampoFormularioModal = {
+  name: string,
+  type: string,
+  placeholder: string,
+  label: string
+}[]
 
 @Component({
   selector: 'app-modal-adicionar-dados',
@@ -19,20 +19,19 @@ export type CampoFormulario = {                                                 
   styleUrl: './modal-adicionar-dados.css'
 })
 export class ModalAdicionarDados {
-  @Output() closeModal = new EventEmitter<void>(); //informa o fechamento do modal
-  @Output() dadosSalvos = new EventEmitter<void>(); //informa que os dados foram salvos
+  @Output() closeModal = new EventEmitter<void>();
+  @Output() dadosSalvos = new EventEmitter<void>();
   
-  message: string = ''; 
-  formData: any = {}; //guarda todas as informações que o usuario digita no form
+  message: string = '';
+  formData: any = {};
 
-  dadosFields = [ //arrays de campos
+  dadosFields = [
     { 
       name: 'Nome_Salario', 
       type: 'text', 
       placeholder: 'Ex: Salário Mensal, Freela...', 
       label: 'Descrição da Renda' 
     },
-    //Os dois primeiros representam a renda
     { 
       name: 'Salario', 
       type: 'number', 
@@ -45,7 +44,6 @@ export class ModalAdicionarDados {
       placeholder: 'Ex: Aluguel, Mercado...', 
       label: 'Descrição da Despesa' 
     },
-    //Representam as despesas
     { 
       name: 'Despesas', 
       type: 'number', 
@@ -58,11 +56,9 @@ export class ModalAdicionarDados {
       placeholder: 'Digite uma data', 
       label: 'Data Comemorativa'
     }
-    //Representa uma data comemorativa
   ];
 
-  //atualiza os dados dentro do form
-  updateFormData(data: CampoFormulario): void {
+  updateFormData(data: CampoFormularioModal): void {
     this.formData = data;
   }
 
@@ -73,7 +69,7 @@ export class ModalAdicionarDados {
       return;
     }
 
-    try {                                                                                                                                                                      //O try é pique você dizer, vou tentar se der errado, te aviso.
+    try {
       // 2. Recuperar o que já existe no LocalStorage
       const dadosArmazenados = localStorage.getItem('dadosFinanceiros');
       
@@ -108,9 +104,9 @@ export class ModalAdicionarDados {
       this.dadosSalvos.emit();
       this.fecharModal();
      
-      //Se o bloco try falhar, ou o local storage der mais que 5MB a mensagem aparece.
+
     } catch (error) {
-      console.error(error); //remove o que tiver de errado no try
+      console.error(error);
       this.message = 'Erro ao salvar dados.';
     }
 
@@ -124,8 +120,9 @@ export class ModalAdicionarDados {
   }
 
   fecharModalClickOverlay(event: MouseEvent): void {
-    if ((event.target as HTMLElement).classList.contains('modal-overlay')) { //verifica se o elmento exato que foi cliacado
+    if ((event.target as HTMLElement).classList.contains('modal-overlay')) {
       this.fecharModal();
     }
   }
 }
+

@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class Perfil implements OnInit {
 
   inicial: string = '';
+ 
 
   ngOnInit(): void {
 
@@ -20,6 +21,9 @@ export class Perfil implements OnInit {
       const user = JSON.parse(userLogado);
       this.inicial = user.nome.charAt(0).toUpperCase();
     }
+
+
+
   }
 }
 

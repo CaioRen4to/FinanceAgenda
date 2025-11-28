@@ -5,6 +5,12 @@ import { Forms } from '../../../ComponentCompartilhado/forms/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+export type CampoLogin = {
+  name: string,
+  type: string | number,
+  placeholder: string,
+  label: string,
+}[]
 @Component({
   selector: 'app-tela-login-component',
   standalone: true,
@@ -24,7 +30,7 @@ export class TelaLoginComponent {
 
   constructor(private router: Router) {}
 
-  updateFormData(dados: any) {
+  updateFormData(dados: CampoLogin) {
     this.formData = dados;
     console.log('Dados atualizados:');
   }
