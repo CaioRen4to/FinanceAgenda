@@ -29,7 +29,9 @@
                 <p>Já tem uma conta? <a [routerLink]="['/login']">Fazer login</a></p>
             </div>
 
-            <div *ngIf="message" class="error">⚠️ {{ message }}</div>
+            <div *ngIf="message" class="error"> {{ message }}</div>
+
+            <div *ngIf="messageCerta" class="correto"> {{ messageCerta }}</div>
         </div>
     </form>
 </main>

@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class TelaLoginComponent {
 
   message = '';
+  messageCerta = '';
   formData: any = {};
 
   loginFields = [
@@ -49,8 +50,8 @@ export class TelaLoginComponent {
 
     // Salva o usuario logado e direciona pra pragina principal
     localStorage.setItem('userLogado', JSON.stringify(usuario));
-    this.message = 'Login realizado!';
+    this.messageCerta = 'Login Realizado Com Sucesso!';
 
-    setTimeout(() => this.router.navigate(['/home']), 1000);
+    setTimeout(() => this.router.navigate(['/home']), 1500);
   }
 }
