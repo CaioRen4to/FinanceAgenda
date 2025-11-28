@@ -18,8 +18,8 @@ export class TelaLoginComponent {
   formData: any = {};
 
   loginFields = [
-    { name: 'email', type: 'text', placeholder: 'nome@exemplo.com', label: 'E-mail' },
-    { name: 'password', type: 'text', placeholder: '••••••••', label: 'Senha' }
+    { name: 'email', type: 'email', placeholder: 'nome@exemplo.com', label: 'E-mail ou Usuário' },
+    { name: 'password', type: 'passoword', placeholder: '••••••••', label: 'Senha' }
   ];
 
   constructor(private router: Router) {}
