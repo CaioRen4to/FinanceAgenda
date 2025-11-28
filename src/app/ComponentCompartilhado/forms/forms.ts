@@ -15,7 +15,7 @@ export class Forms {
 
   @Output() dataChange = new EventEmitter<any>();
 
-  formData: any = {};
+  formData: any = {}; //Usado no modal-adicionar.ts
 
   ngOnChanges() {
     this.fields.forEach(field => {

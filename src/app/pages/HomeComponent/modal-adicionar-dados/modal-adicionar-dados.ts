@@ -4,6 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Forms } from '../../../ComponentCompartilhado/forms/forms';
 import { Button } from '../../../ComponentCompartilhado/button/button';
 
+export type CampoFormulario = {                                                                                                       //define o formato                                                                                                                          
+  name: string, 
+  type: 'text' | 'number' | 'date' | 'email',
+  placeholder: string, 
+  label: string 
+}
 
 @Component({
   selector: 'app-modal-adicionar-dados',
@@ -13,19 +19,20 @@ import { Button } from '../../../ComponentCompartilhado/button/button';
   styleUrl: './modal-adicionar-dados.css'
 })
 export class ModalAdicionarDados {
-  @Output() closeModal = new EventEmitter<void>();
-  @Output() dadosSalvos = new EventEmitter<void>();
+  @Output() closeModal = new EventEmitter<void>(); //informa o fechamento do modal
+  @Output() dadosSalvos = new EventEmitter<void>(); //informa que os dados foram salvos
   
-  message: string = '';
-  formData: any = {};
+  message: string = ''; 
+  formData: any = {}; //guarda todas as informações que o usuario digita no form
 
-  dadosFields = [
+  dadosFields = [ //arrays de campos
     { 
       name: 'Nome_Salario', 
       type: 'text', 
       placeholder: 'Ex: Salário Mensal, Freela...', 
       label: 'Descrição da Renda' 
     },
+    //Os dois primeiros representam a renda
     { 
       name: 'Salario', 
       type: 'number', 
@@ -38,6 +45,7 @@ export class ModalAdicionarDados {
       placeholder: 'Ex: Aluguel, Mercado...', 
       label: 'Descrição da Despesa' 
     },
+    //Representam as despesas
     { 
       name: 'Despesas', 
       type: 'number', 
@@ -50,9 +58,11 @@ export class ModalAdicionarDados {
       placeholder: 'Digite uma data', 
       label: 'Data Comemorativa'
     }
+    //Representa uma data comemorativa
   ];
 
-  updateFormData(data: any): void {
+  //atualiza os dados dentro do form
+  updateFormData(data: CampoFormulario): void {
     this.formData = data;
   }
 
@@ -63,7 +73,7 @@ export class ModalAdicionarDados {
       return;
     }
 
-    try {
+    try {                                                                                                                                                                      //O try é pique você dizer, vou tentar se der errado, te aviso.
       // 2. Recuperar o que já existe no LocalStorage
       const dadosArmazenados = localStorage.getItem('dadosFinanceiros');
       
@@ -98,9 +108,9 @@ export class ModalAdicionarDados {
       this.dadosSalvos.emit();
       this.fecharModal();
      
-
+      //Se o bloco try falhar, ou o local storage der mais que 5MB a mensagem aparece.
     } catch (error) {
-      console.error(error);
+      console.error(error); //remove o que tiver de errado no try
       this.message = 'Erro ao salvar dados.';
     }
 
@@ -114,7 +124,7 @@ export class ModalAdicionarDados {
   }
 
   fecharModalClickOverlay(event: MouseEvent): void {
-    if ((event.target as HTMLElement).classList.contains('modal-overlay')) {
+    if ((event.target as HTMLElement).classList.contains('modal-overlay')) { //verifica se o elmento exato que foi cliacado
       this.fecharModal();
     }
   }
