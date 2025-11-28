@@ -2,10 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/LoginComponent/login-component/login-component';
 import { TelaIncialComponent } from './pages/HomeComponent/tela-incial-component/tela-incial-component';
 import { CadastroComponent } from './pages/LoginComponent/cadastro-component/cadastro-component';
-<<<<<<< HEAD
-=======
 
->>>>>>> 0d5873625b0358820050587c53b6e6c393a814eb
 
 
 export const routes: Routes = [
