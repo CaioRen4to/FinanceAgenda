@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/app/ComponentCompartilhado/modal-adicionar-dados/modal-adicionar-dados.ts"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]

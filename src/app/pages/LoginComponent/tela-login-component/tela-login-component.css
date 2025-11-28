@@ -185,6 +185,20 @@
     animation: slideIn 0.35s ease-out;
 }
 
+.alert-acerto {
+    background: linear-gradient(135deg, rgba(63, 114, 255, 0.199), rgba(0, 68, 255, 0.1));
+    border-left: 4px solid #27f8ff;
+    color: #15d696;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(0, 68, 255, 0.1);
+    animation: slideIn 0.35s ease-out;
+}
+
+
 @keyframes slideIn {
     from {
         opacity: 0;

@@ -21,6 +21,7 @@ export type CampoCadastro = {
 })
 export class CadastroComponent {
 
+  messageCerta = '';
   message = '';
   formData: any = {};
 
@@ -69,7 +70,7 @@ export class CadastroComponent {
     users.push({ nome, email, password, data });
     localStorage.setItem('users', JSON.stringify(users));
 
-    this.message = 'Cadastro realizado com sucesso! Redirecionando para o Login...';
+    this.messageCerta = 'Cadastro realizado com sucesso! Redirecionando para o Login...';
 
     setTimeout(() => this.router.navigate(['/login']), 1500);
   }
