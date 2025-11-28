@@ -4,11 +4,12 @@
     <div class="login-box">
       <label [for]="field.name">{{ field.label }}</label>
 
+      <!-- Construção do template Forms -->
       <input
         [type]="field.type"
         [id]="field.name"
         [name]="field.name"
-        [(ngModel)]="formData[field.name]"
+        [(ngModel)]="formData[field.name]" 
         (ngModelChange)="onFieldChange()"
         [placeholder]="field.placeholder"
         required

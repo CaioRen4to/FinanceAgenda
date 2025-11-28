@@ -24,16 +24,18 @@ export class TelaLoginComponent {
 
   constructor(private router: Router) {}
 
-  updateFormData(data: any) {
-    this.formData = data;
-    console.log('Dados atualizados:', this.formData);
+  updateFormData(dados: any) {
+    this.formData = dados;
+    console.log('Dados atualizados:');
   }
 
   onLogin() {
     
+    // Transforma em Array
     const usersJson = localStorage.getItem('users');
     const users = usersJson ? JSON.parse(usersJson) : [];
 
+    // Verifica se os Usuarios estão na chave do LocalStorage
     const usuario = users.find(
       (u: any) =>
         u.email == this.formData.email &&
@@ -45,6 +47,7 @@ export class TelaLoginComponent {
       return;
     }
 
+    // Salva o usuario logado e direciona pra pragina principal
     localStorage.setItem('userLogado', JSON.stringify(usuario));
     this.message = 'Login realizado!';
 

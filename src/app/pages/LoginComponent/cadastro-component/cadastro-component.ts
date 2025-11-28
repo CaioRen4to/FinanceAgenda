@@ -26,8 +26,9 @@ export class CadastroComponent {
 
   constructor(private router: Router) {}
 
-  updateFormData(data: any) {
-    this.formData = data;
+  // Atualizar os dados
+  updateFormData(dados: any) {
+    this.formData = dados;
     console.log('Dados atualizados:');
   }
 
@@ -49,7 +50,7 @@ export class CadastroComponent {
       return;
     }
 
-
+    // Verifica se já tem um e-mail cadastro no LocalStorage
     if (users.find((u: { email: any; }) => u.email == email)) {
       this.message = 'Este e-mail já está cadastrado. Tente fazer login.';
       return;
