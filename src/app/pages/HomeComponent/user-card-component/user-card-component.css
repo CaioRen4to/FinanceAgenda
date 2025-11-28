@@ -1,12 +1,20 @@
+body {
+    margin: auto;
+    background-color: #333;
+    border-radius: 12px;
+
+}
 
 .container {
-    display: flex;
     flex-direction: column;
     color: aliceblue;
-    background: rgba(26, 26, 26, 0.973);
-    border-radius: 12px;
-    height: 400px;
-    width: 600px;
+    height: 420px;
+    width: 800px;
+    margin: 15px auto;
+}
+
+.titulo {
+    margin: 10px ;
 }
 
 .historico {
@@ -19,11 +27,11 @@
 .nav-finance, .nav-finance-gasto {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* ícone/esquerda vs valor/direita */
+    justify-content: space-between; 
     background: rgba(34, 34, 34, 0.719);
     border-radius: 8px;
     padding: 10px 15px;
-    width: 100%;
+    width: 95%;
     font-family: sans-serif;
 }
 
@@ -35,13 +43,13 @@
     font-weight: 600;
 }
 
-/* cores dos valores */
+
 .nav-finance span.valor {
-    color: #00ff7f; /* verde para entrada */
+    color: #00c964; 
     font-weight: 600;
 }
 
 .nav-finance-gasto span.valor {
-    color: #ff4d4d; /* vermelho para saída */
+    color: #da3e3e; 
     font-weight: 600;
 }

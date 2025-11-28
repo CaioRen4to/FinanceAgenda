@@ -5,8 +5,15 @@
 
   <main class="area-conteudo-principal">
     <div class="conteudo-interno">
-      <app-aside></app-aside>
-      <app-grafico class="container-grafico"></app-grafico>
+
+      <app-aside (dadosSalvos)="atualizarGrafico()"></app-aside>
+
+      <app-grafico #grafico></app-grafico>
+
+      <div class="transacoes">
+        <app-user-card-component></app-user-card-component>
+     </div>
+     
     </div>
 
     <div class="summary">
@@ -54,13 +61,7 @@
         </div>
       </div>
 
-      <app-aside (dadosSalvos)="atualizarGrafico()"></app-aside>
-
-      <app-grafico #grafico></app-grafico>
     </div>
-
-    <div class="transacoes">
-      <app-user-card-component></app-user-card-component>
-    </div>
+    
   </main>
 </div>

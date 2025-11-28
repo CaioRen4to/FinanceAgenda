@@ -19,7 +19,7 @@ export class TelaLoginComponent {
 
   loginFields = [
     { name: 'email', type: 'email', placeholder: 'nome@exemplo.com', label: 'E-mail ou Usuário' },
-    { name: 'password', type: 'passoword', placeholder: '••••••••', label: 'Senha' }
+    { name: 'password', type: 'password', placeholder: 'Digite Sua Senha', label: 'Senha' }
   ];
 
   constructor(private router: Router) {}
@@ -30,13 +30,14 @@ export class TelaLoginComponent {
   }
 
   onLogin() {
+    
     const usersJson = localStorage.getItem('users');
     const users = usersJson ? JSON.parse(usersJson) : [];
 
     const usuario = users.find(
       (u: any) =>
-        u.email === this.formData.email &&
-        u.password === this.formData.password
+        u.email == this.formData.email &&
+        u.password == this.formData.password
     );
 
     if (!usuario) {

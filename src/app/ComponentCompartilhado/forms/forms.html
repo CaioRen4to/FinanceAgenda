@@ -1,16 +1,20 @@
-
-
 <div class="login">
-  <div *ngFor="let field of fields" class="login-box">
-    <label [for]="field.name">{{ field.label }}</label>
-    <input
-      [type]="field.type"
-      [id]="field.name"
-      [name]="field.name"
-      [(ngModel)]="formData[field.name]"
-      (ngModelChange)="onFieldChange()"
-      [placeholder]="field.placeholder"
-      required
-    />
-  </div>
+
+  @for (field of fields; track field.name) {
+    <div class="login-box">
+      <label [for]="field.name">{{ field.label }}</label>
+
+      <input
+        [type]="field.type"
+        [id]="field.name"
+        [name]="field.name"
+        [(ngModel)]="formData[field.name]"
+        (ngModelChange)="onFieldChange()"
+        [placeholder]="field.placeholder"
+        required
+      />
+
+    </div>
+  }
+  
 </div>

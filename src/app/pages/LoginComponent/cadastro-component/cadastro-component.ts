@@ -20,7 +20,7 @@ export class CadastroComponent {
     { name: 'nome', type: 'text', placeholder: 'Digite seu nome', label: 'Usuário' },
     { name: 'email', type: 'email', placeholder: 'Digite seu e-mail', label: 'E-mail' },
     { name: 'password', type: 'password', placeholder: 'Digite sua senha', label: 'Senha' },
-    { name: 'Conpassword', type: 'password', placeholder: 'Confime a senha', label: 'Confirmar Senha'},
+    { name: 'conpassword', type: 'password', placeholder: 'Confime a senha', label: 'Confirmar Senha'},
     { name: 'data', type: 'date', placeholder: 'Dia do nascimento', label: 'Data de Aniversario' }
   ];
 
@@ -28,34 +28,35 @@ export class CadastroComponent {
 
   updateFormData(data: any) {
     this.formData = data;
-    console.log('Dados atualizados:', this.formData);
+    console.log('Dados atualizados:');
   }
 
   onCadastro() {
 
-    const { nome, email, password, Conpassword, data } = this.formData;
+    const { nome, email, password, conpassword, data } = this.formData;
 
-    if (!nome || !email || !password || !Conpassword || !data) {
+    if (!nome || !email || !password || !conpassword || !data) {
       this.message = 'Preencher todos os campos obrigatórios!';
       return;
     }
 
+    // Criar uma Array
     const usersJson = localStorage.getItem('users');
     const users = usersJson ? JSON.parse(usersJson) : [];
 
-    if (password !== Conpassword) {
+    if (password !== conpassword) {
       this.message = 'As Senhas precisam ser iguais!'
       return;
     }
 
 
-    if (users.find((u: { email: any; }) => u.email === email)) {
+    if (users.find((u: { email: any; }) => u.email == email)) {
       this.message = 'Este e-mail já está cadastrado. Tente fazer login.';
       return;
     }
 
     
-
+    // Cadastrar Novo Usuario
     users.push({ nome, email, password, data });
     localStorage.setItem('users', JSON.stringify(users));
 

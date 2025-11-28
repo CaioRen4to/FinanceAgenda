@@ -9,7 +9,6 @@
       <form method="POST" (ngSubmit)="SalvarDados()" class="Captura_dados">
         
         <app-forms
-          [title]="''"
           [fields]="$any(dadosFields)"
           (dataChange)="updateFormData($event)"
         ></app-forms>

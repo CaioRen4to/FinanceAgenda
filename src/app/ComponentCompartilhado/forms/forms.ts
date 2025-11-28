@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-forms',
   standalone: true,
@@ -11,14 +10,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './forms.css'
 })
 export class Forms {
-  @Input() title: string = '';
+  
   @Input() fields: { name: string, type: string, placeholder: string, label: string }[] = [];
 
   @Output() dataChange = new EventEmitter<any>();
 
   formData: any = {};
 
-  ngOnInit() {
+  ngOnChanges() {
     this.fields.forEach(field => {
       this.formData[field.name] = '';
     });
